@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="id"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami - JM NETWORK</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-rocket"></i> JM NETWORK</h1>
+                <p class="tagline">Menghubungkan Masa Depan, Hari Ini</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="nav-link">Beranda</a></li>
+                    <li><a href="about.html" class="nav-link">Tentang</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="nav-link">Layanan <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="components/services/viachat.html">VIaChat</a>
+                            <a href="components/services/brainet.html">Brainet</a>
+                            <a href="components/services/networking.html">Jaringan</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html" class="nav-link active">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero contact-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Hubungi Kami</h1>
+                <p>Siap untuk mentransformasi bisnis Anda? Mari mulai percakapan</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Beranda</a> / <span>Hubungi Kami</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Kunjungi Kantor Kami</h3>
+                        <p>123 Jalan Tech<br>Kota Inovasi, IC 12345<br>Indonesia</p>
+                        <a href="#" class="contact-link">Dapatkan Petunjuk Arah</a>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Hubungi Kami</h3>
+                        <p>Utama: +1 (555) 123-4567<br>Dukungan: +1 (555) 123-4568<br>Penjualan: +1 (555) 123-4569</p>
+                        <a href="tel:+15551234567" class="contact-link">Telepon Sekarang</a>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email Kami</h3>
+                        <p>Umum: info@techflowsolutions.com<br>Dukungan: support@techflowsolutions.com<br>Penjualan: sales@techflowsolutions.com</p>
+                        <a href="mailto:info@techflowsolutions.com" class="contact-link">Kirim Email</a>
+                    </div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Jam Kerja</h3>
+                        <p>Senin - Jumat: 9:00 - 18:00<br>Sabtu: 10:00 - 16:00<br>Minggu: Tutup</p>
+                        <span class="contact-link status-open">Saat ini Buka</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-form-wrapper">
+                <div class="form-content">
+                    <div class="section-header">
+                        <h2>Kirim Pesan Kepada Kami</h2>
+                        <p>Punya pertanyaan atau ingin mendiskusikan proyek Anda? Kami ingin mendengar dari Anda.</p>
+                        <div class="section-divider"></div>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm" action="#" method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Nama Depan *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <span class="form-error" id="firstNameError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nama Belakang *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <span class="form-error" id="lastNameError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Alamat Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="form-error" id="emailError"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Nomor Telepon</label>
+                                <input type="tel" id="phone" name="phone">
+                                <span class="form-error" id="phoneError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Nama Perusahaan</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Layanan yang Diminati</label>
+                            <select id="service" name="service">
+                                <option value="">Pilih layanan</option>
+                                <option value="viachat">VIaChat - WhatsApp API</option>
+                                <option value="brainet">Brainet - Layanan Internet</option>
+                                <option value="networking">Layanan Jaringan</option>
+                                <option value="consultation">Konsultasi Gratis</option>
+                                <option value="other">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">Anggaran Proyek</label>
+                            <select id="budget" name="budget">
+                                <option value="">Pilih rentang anggaran</option>
+                                <option value="under-5k">Di bawah Rp 70.000.000</option>
+                                <option value="5k-15k">Rp 70.000.000 - Rp 210.000.000</option>
+                                <option value="15k-50k">Rp 210.000.000 - Rp 700.000.000</option>
+                                <option value="50k-100k">Rp 700.000.000 - Rp 1.400.000.000</option>
+                                <option value="over-100k">Di atas Rp 1.400.000.000</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Pesan *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Ceritakan tentang proyek Anda atau bagaimana kami dapat membantu Anda..." required></textarea>
+                            <span class="form-error" id="messageError"></span>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Berlangganan buletin kami untuk pembaruan dan wawasan
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkmark"></span>
+                                Saya menyetujui <a href="#" class="terms-link">Ketentuan Layanan</a> dan <a href="#" class="terms-link">Kebijakan Privasi</a> *
+                            </label>
+                            <span class="form-error" id="termsError"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Kirim Pesan
+                        </button>
+                        
+                        <div class="form-success" id="formSuccess">
+                            <i class="fas fa-check-circle"></i>
+                            Terima kasih! Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda dalam 24 jam.
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-sidebar">
+                    <div class="sidebar-card">
+                        <div class="sidebar-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Dukungan 24/7</h3>
+                        <p>Tim dukungan ahli kami tersedia sepanjang waktu untuk membantu Anda dengan pertanyaan atau masalah.</p>
+                        <a href="#" class="sidebar-link">Akses Portal Dukungan</a>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <div class="sidebar-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Jadwalkan Demo</h3>
+                        <p>Lihat solusi kami dalam tindakan dengan demo yang disesuaikan dengan kebutuhan bisnis Anda.</p>
+                        <a href="#" class="sidebar-link">Pesan Demo</a>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <div class="sidebar-icon">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3>Unduh Sumber Daya</h3>
+                        <p>Akses whitepaper, studi kasus, dan dokumentasi teknis kami.</p>
+                        <a href="#" class="sidebar-link">Lihat Sumber Daya</a>
+                    </div>
+                    
+                    <div class="sidebar-card social-card">
+                        <h3>Ikuti Kami</h3>
+                        <p>Tetap terhubung dan dapatkan pembaruan terbaru</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pertanyaan yang Sering Diajukan</h2>
+                <p>Jawaban cepat untuk pertanyaan umum tentang layanan kami</p>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Seberapa cepat Anda dapat mengimplementasikan VIaChat untuk bisnis kami? <i class="fas fa-chevron-down"></i></h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Implementasi VIaChat biasanya membutuhkan waktu 2-5 hari kerja tergantung pada kebutuhan Anda. Tim kami menyediakan pengaturan, konfigurasi, dan pengujian lengkap untuk memastikan integrasi yang mulus dengan sistem yang ada.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Kecepatan internet apa yang ditawarkan Brainet? <i class="fas fa-chevron-down"></i></h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Brainet menawarkan paket kecepatan fleksibel dari 100 Mbps hingga 10 Gbps, dengan teknologi serat optik yang memastikan kinerja konsisten. Semua paket termasuk data tak terbatas dan jaminan uptime 99,9%.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Apakah Anda menyediakan dukungan teknis 24/7? <i class="fas fa-chevron-down"></i></h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menyediakan dukungan teknis 24 jam melalui berbagai saluran termasuk telepon, email, live chat, dan portal pelanggan kami. Teknisi ahli kami selalu siap membantu.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Bisakah Anda menyesuaikan solusi untuk klien perusahaan? <i class="fas fa-chevron-down"></i></h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tentu saja! Kami mengkhususkan diri dalam menciptakan solusi yang disesuaikan untuk klien perusahaan. Tim kami bekerja sama dengan Anda untuk memahami kebutuhan spesifik Anda dan memberikan implementasi yang disesuaikan.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Langkah-langkah keamanan apa yang Anda terapkan? <i class="fas fa-chevron-down"></i></h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami menerapkan keamanan tingkat perusahaan termasuk enkripsi SSL, autentikasi dua faktor, audit keamanan rutin, dan kepatuhan dengan standar industri seperti ISO 27001.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Apakah Anda menawarkan uji coba gratis atau demo? <i class="fas fa-chevron-down"></i></h3>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, kami menawarkan uji coba gratis untuk semua layanan kami dan demo yang dipersonalisasi. Hubungi kami untuk menjadwalkan demo atau mulai uji coba gratis Anda hari ini.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Temukan Kami</h2>
+                <p>Kunjungi kantor pusat kami atau terhubung dengan kami secara global</p>
+                <div class="section-divider"></div>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <div class="map-placeholder">
+                <div class="map-content">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Peta Interaktif</h3>
+                    <p>123 Jalan Tech, Kota Inovasi, IC 12345</p>
+                    <a href="#" class="btn btn-outline">Buka di Google Maps</a>
+                </div>
+            </div>
+            
+            <div class="office-info">
+                <div class="office-card">
+                    <h3><i class="fas fa-building"></i> Kantor Pusat</h3>
+                    <div class="office-details">
+                        <p><strong>Alamat:</strong><br>123 Jalan Tech<br>Kota Inovasi, IC 12345</p>
+                        <p><strong>Telepon:</strong><br>+1 (555) 123-4567</p>
+                        <p><strong>Email:</strong><br>info@techflowsolutions.com</p>
+                    </div>
+                </div>
+                
+                <div class="office-facilities">
+                    <h4>Fasilitas & Amenitas</h4>
+                    <ul class="facilities-list">
+                        <li><i class="fas fa-wifi"></i> Internet Kecepatan Tinggi</li>
+                        <li><i class="fas fa-car"></i> Parkir Gratis</li>
+                        <li><i class="fas fa-coffee"></i> Minuman</li>
+                        <li><i class="fas fa-wheelchair"></i> Dapat Diakses</li>
+                        <li><i class="fas fa-video"></i> Konferensi Video</li>
+                        <li><i class="fas fa-users"></i> Ruang Pertemuan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3><i class="fas fa-rocket"></i> JM NETWORK</h3>
+                        <p>Menghubungkan Masa Depan, Hari Ini</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="components/services/viachat.html">VIaChat API</a></li>
+                        <li><a href="components/services/brainet.html">Brainet ISP</a></li>
+                        <li><a href="components/services/networking.html">Jaringan</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Perusahaan</h4>
+                    <ul>
+                        <li><a href="about.html">Tentang Kami</a></li>
+                        <li><a href="contact.html">Kontak</a></li>
+                        <li><a href="#">Karir</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Dukungan</h4>
+                    <ul>
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Dokumentasi</a></li>
+                        <li><a href="#">Referensi API</a></li>
+                        <li><a href="#">Halaman Status</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Informasi Kontak</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> info@techflowsolutions.com</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Jalan Tech, Kota Inovasi</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 JM NETWORK. Semua hak dilindungi. | <a href="#">Kebijakan Privasi</a> | <a href="#">Ketentuan Layanan</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/components/navigation.js"></script>
+    <script>
+        // Fungsi Formulir Kontak
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            // Toggle FAQ
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Tutup semua item FAQ
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-answer').style.maxHeight = '0';
+                    });
+                    
+                    // Buka item yang diklik jika sebelumnya tidak aktif
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+            
+            // Validasi dan Pengiriman Formulir
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Hapus error sebelumnya
+                document.querySelectorAll('.form-error').forEach(error => {
+                    error.textContent = '';
+                });
+                
+                let isValid = true;
+                
+                // Validasi bidang yang diperlukan
+                const requiredFields = ['firstName', 'lastName', 'email', 'message'];
+                requiredFields.forEach(fieldId => {
+                    const field = document.getElementById(fieldId);
+                    const error = document.getElementById(fieldId + 'Error');
+                    
+                    if (!field.value.trim()) {
+                        error.textContent = 'Bidang ini wajib diisi';
+                        isValid = false;
+                    }
+                });
+                
+                // Validasi email
+                const email = document.getElementById('email');
+                const emailError = document.getElementById('emailError');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (email.value && !emailPattern.test(email.value)) {
+                    emailError.textContent = 'Harap masukkan alamat email yang valid';
+                    isValid = false;
+                }
+                
+                // Validasi kotak centang persyaratan
+                const terms = document.getElementById('terms');
+                const termsError = document.getElementById('termsError');
+                
+                if (!terms.checked) {
+                    termsError.textContent = 'Anda harus menyetujui ketentuan dan kebijakan privasi';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Tampilkan pesan sukses
+                    document.getElementById('formSuccess').style.display = 'block';
+                    form.reset();
+                    
+                    // Sembunyikan pesan sukses setelah 5 detik
+                    setTimeout(() => {
+                        document.getElementById('formSuccess').style.display = 'none';
+                    }, 5000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
