@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="id"></html>
+<html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hubungi Kami - JM NETWORK</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1><i class="fas fa-rocket"></i> JM NETWORK</h1>
+                <h1>
+                    <img src="assets/logo.png" alt="JM NETWORK Logo" class="logo-icon"
+                        style="height:1.5em;vertical-align:middle;">
+                    JM NETWORK
+                </h1>
                 <p class="tagline">Menghubungkan Masa Depan, Hari Ini</p>
             </div>
             <nav class="nav">
@@ -60,11 +67,12 @@
                     </div>
                     <div class="contact-details">
                         <h3>Kunjungi Kantor Kami</h3>
-                        <p>PERUM PONDOK MUTIARA ASRI BLOK J3/21, Desa/Kelurahan Pandanlandung, Kec. Wagir, Kab. Malang, Provinsi Jawa Timur, Kode Pos: 65158</p>
+                        <p>PERUM PONDOK MUTIARA ASRI BLOK J3/21, Desa/Kelurahan Pandanlandung, Kec. Wagir, Kab. Malang,
+                            Provinsi Jawa Timur, Kode Pos: 65158</p>
                         <a href="#" class="contact-link">Dapatkan Petunjuk Arah</a>
                     </div>
                 </div>
-                
+
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
@@ -75,7 +83,7 @@
                         <a href="tel:+6287847096138" class="contact-link">Telepon Sekarang</a>
                     </div>
                 </div>
-                
+
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
@@ -86,7 +94,7 @@
                         <a href="mailto:admin@jaylangkung.co.id" class="contact-link">Kirim Email</a>
                     </div>
                 </div>
-                
+
                 <div class="contact-card">
                     <div class="contact-icon">
                         <i class="fas fa-clock"></i>
@@ -111,7 +119,7 @@
                         <p>Punya pertanyaan atau ingin mendiskusikan proyek Anda? Kami ingin mendengar dari Anda.</p>
                         <div class="section-divider"></div>
                     </div>
-                    
+
                     <form class="contact-form" id="contactForm" action="#" method="post">
                         <div class="form-row">
                             <div class="form-group">
@@ -125,7 +133,7 @@
                                 <span class="form-error" id="lastNameError"></span>
                             </div>
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Alamat Email *</label>
@@ -138,12 +146,12 @@
                                 <span class="form-error" id="phoneError"></span>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="company">Nama Perusahaan</label>
                             <input type="text" id="company" name="company">
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="service">Layanan yang Diminati</label>
                             <select id="service" name="service">
@@ -155,7 +163,7 @@
                                 <option value="other">Lainnya</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="budget">Anggaran Proyek</label>
                             <select id="budget" name="budget">
@@ -167,13 +175,15 @@
                                 <option value="over-100k">Di atas Rp 1.400.000.000</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Pesan *</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Ceritakan tentang proyek Anda atau bagaimana kami dapat membantu Anda..." required></textarea>
+                            <textarea id="message" name="message" rows="6"
+                                placeholder="Ceritakan tentang proyek Anda atau bagaimana kami dapat membantu Anda..."
+                                required></textarea>
                             <span class="form-error" id="messageError"></span>
                         </div>
-                        
+
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="newsletter" name="newsletter">
@@ -181,47 +191,50 @@
                                 Berlangganan buletin kami untuk pembaruan dan wawasan
                             </label>
                         </div>
-                        
+
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="terms" name="terms" required>
                                 <span class="checkmark"></span>
-                                Saya menyetujui <a href="#" class="terms-link">Ketentuan Layanan</a> dan <a href="#" class="terms-link">Kebijakan Privasi</a> *
+                                Saya menyetujui <a href="#" class="terms-link">Ketentuan Layanan</a> dan <a href="#"
+                                    class="terms-link">Kebijakan Privasi</a> *
                             </label>
                             <span class="form-error" id="termsError"></span>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary btn-submit">
                             <i class="fas fa-paper-plane"></i>
                             Kirim Pesan
                         </button>
-                        
+
                         <div class="form-success" id="formSuccess">
                             <i class="fas fa-check-circle"></i>
                             Terima kasih! Pesan Anda telah berhasil dikirim. Kami akan menghubungi Anda dalam 24 jam.
                         </div>
                     </form>
                 </div>
-                
+
                 <div class="contact-sidebar">
                     <div class="sidebar-card">
                         <div class="sidebar-icon">
                             <i class="fas fa-headset"></i>
                         </div>
                         <h3>Dukungan 24/7</h3>
-                        <p>Tim dukungan ahli kami tersedia sepanjang waktu untuk membantu Anda dengan pertanyaan atau masalah.</p>
+                        <p>Tim dukungan ahli kami tersedia sepanjang waktu untuk membantu Anda dengan pertanyaan atau
+                            masalah.</p>
                         <a href="#" class="sidebar-link">Akses Portal Dukungan</a>
                     </div>
-                    
+
                     <div class="sidebar-card">
                         <div class="sidebar-icon">
                             <i class="fas fa-calendar-alt"></i>
                         </div>
                         <h3>Jadwalkan Demo</h3>
-                        <p>Lihat solusi kami dalam tindakan dengan demo yang disesuaikan dengan kebutuhan bisnis Anda.</p>
+                        <p>Lihat solusi kami dalam tindakan dengan demo yang disesuaikan dengan kebutuhan bisnis Anda.
+                        </p>
                         <a href="#" class="sidebar-link">Pesan Demo</a>
                     </div>
-                    
+
                     <div class="sidebar-card">
                         <div class="sidebar-icon">
                             <i class="fas fa-download"></i>
@@ -230,7 +243,7 @@
                         <p>Akses whitepaper, studi kasus, dan dokumentasi teknis kami.</p>
                         <a href="#" class="sidebar-link">Lihat Sumber Daya</a>
                     </div>
-                    
+
                     <div class="sidebar-card social-card">
                         <h3>Ikuti Kami</h3>
                         <p>Tetap terhubung dan dapatkan pembaruan terbaru</p>
@@ -262,59 +275,70 @@
                 <p>Jawaban cepat untuk pertanyaan umum tentang layanan kami</p>
                 <div class="section-divider"></div>
             </div>
-            
+
             <div class="faq-grid">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Seberapa cepat Anda dapat mengimplementasikan VIaChat untuk bisnis kami? <i class="fas fa-chevron-down"></i></h3>
+                        <h3>Seberapa cepat Anda dapat mengimplementasikan VIaChat untuk bisnis kami? <i
+                                class="fas fa-chevron-down"></i></h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Implementasi VIaChat biasanya membutuhkan waktu 2-5 hari kerja tergantung pada kebutuhan Anda. Tim kami menyediakan pengaturan, konfigurasi, dan pengujian lengkap untuk memastikan integrasi yang mulus dengan sistem yang ada.</p>
+                        <p>Implementasi VIaChat biasanya membutuhkan waktu 2-5 hari kerja tergantung pada kebutuhan
+                            Anda. Tim kami menyediakan pengaturan, konfigurasi, dan pengujian lengkap untuk memastikan
+                            integrasi yang mulus dengan sistem yang ada.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Kecepatan internet apa yang ditawarkan Brainet? <i class="fas fa-chevron-down"></i></h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Brainet menawarkan paket kecepatan fleksibel dari 100 Mbps hingga 10 Gbps, dengan teknologi serat optik yang memastikan kinerja konsisten. Semua paket termasuk data tak terbatas dan jaminan uptime 99,9%.</p>
+                        <p>Brainet menawarkan paket kecepatan fleksibel dari 100 Mbps hingga 10 Gbps, dengan teknologi
+                            serat optik yang memastikan kinerja konsisten. Semua paket termasuk data tak terbatas dan
+                            jaminan uptime 99,9%.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Apakah Anda menyediakan dukungan teknis 24/7? <i class="fas fa-chevron-down"></i></h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Ya, kami menyediakan dukungan teknis 24 jam melalui berbagai saluran termasuk telepon, email, live chat, dan portal pelanggan kami. Teknisi ahli kami selalu siap membantu.</p>
+                        <p>Ya, kami menyediakan dukungan teknis 24 jam melalui berbagai saluran termasuk telepon, email,
+                            live chat, dan portal pelanggan kami. Teknisi ahli kami selalu siap membantu.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
-                        <h3>Bisakah Anda menyesuaikan solusi untuk klien perusahaan? <i class="fas fa-chevron-down"></i></h3>
+                        <h3>Bisakah Anda menyesuaikan solusi untuk klien perusahaan? <i class="fas fa-chevron-down"></i>
+                        </h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Tentu saja! Kami mengkhususkan diri dalam menciptakan solusi yang disesuaikan untuk klien perusahaan. Tim kami bekerja sama dengan Anda untuk memahami kebutuhan spesifik Anda dan memberikan implementasi yang disesuaikan.</p>
+                        <p>Tentu saja! Kami mengkhususkan diri dalam menciptakan solusi yang disesuaikan untuk klien
+                            perusahaan. Tim kami bekerja sama dengan Anda untuk memahami kebutuhan spesifik Anda dan
+                            memberikan implementasi yang disesuaikan.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Langkah-langkah keamanan apa yang Anda terapkan? <i class="fas fa-chevron-down"></i></h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Kami menerapkan keamanan tingkat perusahaan termasuk enkripsi SSL, autentikasi dua faktor, audit keamanan rutin, dan kepatuhan dengan standar industri seperti ISO 27001.</p>
+                        <p>Kami menerapkan keamanan tingkat perusahaan termasuk enkripsi SSL, autentikasi dua faktor,
+                            audit keamanan rutin, dan kepatuhan dengan standar industri seperti ISO 27001.</p>
                     </div>
                 </div>
-                
+
                 <div class="faq-item">
                     <div class="faq-question">
                         <h3>Apakah Anda menawarkan uji coba gratis atau demo? <i class="fas fa-chevron-down"></i></h3>
                     </div>
                     <div class="faq-answer">
-                        <p>Ya, kami menawarkan uji coba gratis untuk semua layanan kami dan demo yang dipersonalisasi. Hubungi kami untuk menjadwalkan demo atau mulai uji coba gratis Anda hari ini.</p>
+                        <p>Ya, kami menawarkan uji coba gratis untuk semua layanan kami dan demo yang dipersonalisasi.
+                            Hubungi kami untuk menjadwalkan demo atau mulai uji coba gratis Anda hari ini.</p>
                     </div>
                 </div>
             </div>
@@ -330,27 +354,29 @@
                 <div class="section-divider"></div>
             </div>
         </div>
-        
+
         <div class="map-container">
             <div class="map-placeholder">
                 <div class="map-content">
                     <i class="fas fa-map-marked-alt"></i>
                     <h3>Peta Interaktif</h3>
-                    <p>PERUM PONDOK MUTIARA ASRI BLOK J3/21, Desa/Kelurahan Pandanlandung, Kec. Wagir, Kab. Malang, Provinsi Jawa Timur, Kode Pos: 65158</p>
+                    <p>PERUM PONDOK MUTIARA ASRI BLOK J3/21, Desa/Kelurahan Pandanlandung, Kec. Wagir, Kab. Malang,
+                        Provinsi Jawa Timur, Kode Pos: 65158</p>
                     <a href="#" class="btn btn-outline">Buka di Google Maps</a>
                 </div>
             </div>
-            
+
             <div class="office-info">
                 <div class="office-card">
                     <h3><i class="fas fa-building"></i> Kantor Pusat</h3>
                     <div class="office-details">
-                        <p><strong>Alamat:</strong><br>PERUM PONDOK MUTIARA ASRI BLOK J3/21, Desa/Kelurahan Pandanlandung, Kec. Wagir<br>Kab. Malang, Provinsi Jawa Timur, Kode Pos: 65158</p>
+                        <p><strong>Alamat:</strong><br>PERUM PONDOK MUTIARA ASRI BLOK J3/21, Desa/Kelurahan
+                            Pandanlandung, Kec. Wagir<br>Kab. Malang, Provinsi Jawa Timur, Kode Pos: 65158</p>
                         <p><strong>Telepon:</strong><br>+62 878-4709-6138</p>
                         <p><strong>Email:</strong><br>admin@jaylangkung.co.id</p>
                     </div>
                 </div>
-                
+
                 <div class="office-facilities">
                     <h4>Fasilitas</h4>
                     <ul class="facilities-list">
@@ -372,7 +398,11 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <h3><i class="fas fa-rocket"></i> JM NETWORK</h3>
+                        <h3>
+                            <img src="assets/logo.png" alt="JM NETWORK Logo" class="logo-icon"
+                                style="height:1.2em;vertical-align:middle;">
+                            JM NETWORK
+                        </h3>
                         <p>Menghubungkan Masa Depan, Hari Ini</p>
                     </div>
                     <div class="social-links">
@@ -382,7 +412,7 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Layanan</h4>
                     <ul>
@@ -391,7 +421,7 @@
                         <li><a href="components/services/networking.html">Jaringan</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Perusahaan</h4>
                     <ul>
@@ -401,7 +431,7 @@
                         <li><a href="#">Blog</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Dukungan</h4>
                     <ul>
@@ -411,7 +441,7 @@
                         <li><a href="#">Halaman Status</a></li>
                     </ul>
                 </div>
-                
+
                 <!-- <div class="footer-section">
                     <h4>Informasi Kontak</h4>
                     <ul class="contact-info">
@@ -421,9 +451,10 @@
                     </ul>
                 </div> -->
             </div>
-            
+
             <div class="footer-bottom">
-                <p>&copy; 2024 JM NETWORK. Semua hak dilindungi. | <a href="#">Kebijakan Privasi</a> | <a href="#">Ketentuan Layanan</a></p>
+                <p>&copy; 2024 JM NETWORK. Semua hak dilindungi. | <a href="#">Kebijakan Privasi</a> | <a
+                        href="#">Ketentuan Layanan</a></p>
             </div>
         </div>
     </footer>
@@ -432,24 +463,24 @@
     <script src="js/components/navigation.js"></script>
     <script>
         // Fungsi Formulir Kontak
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('contactForm');
             const faqItems = document.querySelectorAll('.faq-item');
-            
+
             // Toggle FAQ
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
                 const answer = item.querySelector('.faq-answer');
-                
+
                 question.addEventListener('click', () => {
                     const isActive = item.classList.contains('active');
-                    
+
                     // Tutup semua item FAQ
                     faqItems.forEach(faq => {
                         faq.classList.remove('active');
                         faq.querySelector('.faq-answer').style.maxHeight = '0';
                     });
-                    
+
                     // Buka item yang diklik jika sebelumnya tidak aktif
                     if (!isActive) {
                         item.classList.add('active');
@@ -457,54 +488,54 @@
                     }
                 });
             });
-            
+
             // Validasi dan Pengiriman Formulir
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 // Hapus error sebelumnya
                 document.querySelectorAll('.form-error').forEach(error => {
                     error.textContent = '';
                 });
-                
+
                 let isValid = true;
-                
+
                 // Validasi bidang yang diperlukan
                 const requiredFields = ['firstName', 'lastName', 'email', 'message'];
                 requiredFields.forEach(fieldId => {
                     const field = document.getElementById(fieldId);
                     const error = document.getElementById(fieldId + 'Error');
-                    
+
                     if (!field.value.trim()) {
                         error.textContent = 'Bidang ini wajib diisi';
                         isValid = false;
                     }
                 });
-                
+
                 // Validasi email
                 const email = document.getElementById('email');
                 const emailError = document.getElementById('emailError');
                 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                
+
                 if (email.value && !emailPattern.test(email.value)) {
                     emailError.textContent = 'Harap masukkan alamat email yang valid';
                     isValid = false;
                 }
-                
+
                 // Validasi kotak centang persyaratan
                 const terms = document.getElementById('terms');
                 const termsError = document.getElementById('termsError');
-                
+
                 if (!terms.checked) {
                     termsError.textContent = 'Anda harus menyetujui ketentuan dan kebijakan privasi';
                     isValid = false;
                 }
-                
+
                 if (isValid) {
                     // Tampilkan pesan sukses
                     document.getElementById('formSuccess').style.display = 'block';
                     form.reset();
-                    
+
                     // Sembunyikan pesan sukses setelah 5 detik
                     setTimeout(() => {
                         document.getElementById('formSuccess').style.display = 'none';
@@ -514,4 +545,5 @@
         });
     </script>
 </body>
+
 </html>
