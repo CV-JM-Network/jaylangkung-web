@@ -20,7 +20,7 @@ const services = [
   },
   {
     icon: Wifi,
-    title: "Brainet",
+    title: "Brainnet",
     subtitle: "Penyedia Layanan Internet Premium",
     description:
       "Rasakan konektivitas internet super cepat dengan layanan ISP premium kami. Solusi yang andal, aman, dan dapat diskalakan untuk rumah dan bisnis.",
@@ -30,7 +30,7 @@ const services = [
       "Dukungan teknis 24/7",
       "Keamanan tingkat perusahaan",
     ],
-    href: "/services/brainet",
+    href: "/services/brainnet",
   },
   {
     icon: Network,

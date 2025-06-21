@@ -9,7 +9,7 @@ const testimonials = [
   },
   {
     content:
-      "Layanan internet Brainet sangat andal. Tidak ada waktu henti dalam setahun terakhir untuk bisnis e-commerce kami.",
+      "Layanan internet Brainnet sangat andal. Tidak ada waktu henti dalam setahun terakhir untuk bisnis e-commerce kami.",
     author: "Michael Chen",
     position: "CTO, OnlineStore Inc.",
   },

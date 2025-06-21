@@ -24,8 +24,8 @@ const services = [
     description: 'WhatsApp API solutions',
   },
   {
-    title: 'Brainet',
-    href: '/services/brainet',
+    title: 'Brainnet',
+    href: '/services/brainnet',
     description: 'High-speed internet services',
   },
   {

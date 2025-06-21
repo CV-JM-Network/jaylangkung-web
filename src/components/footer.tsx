@@ -48,8 +48,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href='/services/brainet' className='hover:text-red-400'>
-                  Brainet ISP
+                <Link href='/services/brainnet' className='hover:text-red-400'>
+                  Brainnet ISP
                 </Link>
               </li>
               <li>

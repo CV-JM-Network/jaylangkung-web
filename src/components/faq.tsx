@@ -50,7 +50,7 @@ const defaultQuestions: FAQItem[] = [
   },
 ];
 
-const brainetQuestions = [
+const brainnetQuestions = [
   {
     question: 'Apa yang membuat internet fiber lebih baik dari kabel atau DSL?',
     answer:
@@ -64,7 +64,7 @@ const brainetQuestions = [
   {
     question: 'Apakah ada batasan data atau throttling?',
     answer:
-      'Tidak, semua paket Brainet termasuk data unlimited tanpa batasan, throttling, atau pembatasan. Anda mendapatkan kecepatan penuh yang Anda bayar, 24/7, baik untuk streaming, gaming, atau menjalankan bisnis.',
+      'Tidak, semua paket Brainnet termasuk data unlimited tanpa batasan, throttling, atau pembatasan. Anda mendapatkan kecepatan penuh yang Anda bayar, 24/7, baik untuk streaming, gaming, atau menjalankan bisnis.',
   },
   {
     question: 'Peralatan apa yang disertakan dalam paket saya?',
@@ -149,12 +149,12 @@ const viaChatQuestions = [
   },
 ];
 
-export function FAQBrainet() {
+export function FAQBrainnet() {
   return (
     <FAQ
-      title='Pertanyaan Umum tentang Brainet'
+      title='Pertanyaan Umum tentang Brainnet'
       subtitle='Temukan jawaban untuk pertanyaan umum tentang layanan internet fiber kami'
-      questions={brainetQuestions}
+      questions={brainnetQuestions}
       colors={['#4A90E2', '#50E3C2', '#9013FE']}
     />
   );

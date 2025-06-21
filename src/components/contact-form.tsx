@@ -170,8 +170,8 @@ export default function ContactForm() {
                       </SelectTrigger>
                       <SelectContent className='bg-white'>
                         <SelectItem value='viachat'>ViaChat - WhatsApp API</SelectItem>
-                        <SelectItem value='brainet'>
-                          Brainet - Layanan Internet
+                        <SelectItem value='brainnet'>
+                          Brainnet - Layanan Internet
                         </SelectItem>
                         <SelectItem value='networking'>Layanan Jaringan</SelectItem>
                         <SelectItem value='consultation'>Konsultasi Gratis</SelectItem>
