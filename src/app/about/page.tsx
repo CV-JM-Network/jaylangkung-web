@@ -1,4 +1,8 @@
 import CallToAction from '@/components/call-to-action';
+import CompanyCulture from '@/components/company-culture';
+import CompanyOverview from '@/components/company-overview';
+import LeadershipTeam from '@/components/leadership-team';
+import MissionVisionValues from '@/components/mission-vision-values';
 import PageHero from '@/components/page-hero';
 
 export default function AboutPage() {
@@ -13,7 +17,6 @@ export default function AboutPage() {
       <MissionVisionValues />
       <LeadershipTeam />
       <CompanyCulture />
-      <AwardsRecognition />
       <CallToAction />
     </main>
   );
