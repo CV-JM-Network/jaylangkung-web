@@ -15,7 +15,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { Calendar, Download, Headphones, Users } from 'lucide-react';
+import { Calendar, Users } from 'lucide-react';
 import { useState } from 'react';
 
 export default function ContactForm() {
@@ -32,10 +32,32 @@ export default function ContactForm() {
     terms: false,
   });
 
+  const isFormValid =
+    formData.firstName.trim() !== '' &&
+    formData.lastName.trim() !== '' &&
+    formData.email.trim() !== '' &&
+    formData.message.trim() !== '' &&
+    formData.service.trim() !== '' &&
+    formData.terms;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    // Format the email
+    const subject = 'Pesan dari Form Kontak Website';
+    const body =
+      `Halo Admin,%0D%0A` +
+      `Nama: ${formData.firstName} ${formData.lastName}%0D%0A` +
+      `Email: ${formData.email}%0D%0A` +
+      `Telepon: ${formData.phone}%0D%0A` +
+      `Perusahaan: ${formData.company}%0D%0A` +
+      `Layanan: ${formData.service}%0D%0A` +
+      `Anggaran: ${formData.budget}%0D%0A` +
+      `Pesan: ${formData.message}`;
+    const adminEmail = 'admin@example.com';
+    const mailtoLink = `mailto:${adminEmail}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${body}`;
+    window.open(mailtoLink, '_blank');
   };
 
   return (
@@ -56,32 +78,42 @@ export default function ContactForm() {
                 <form onSubmit={handleSubmit} className='space-y-6'>
                   <div className='grid gap-4 md:grid-cols-2'>
                     <div>
-                      <Label htmlFor='firstName'>Nama Depan *</Label>
+                      <Label htmlFor='firstName' className='mb-2'>
+                        Nama Depan *
+                      </Label>
                       <Input
                         id='firstName'
                         value={formData.firstName}
                         onChange={(e) =>
                           setFormData({ ...formData, firstName: e.target.value })
                         }
+                        type='text'
                         required
+                        className='focus-visible:ring-2 focus-visible:ring-red-500'
                       />
                     </div>
                     <div>
-                      <Label htmlFor='lastName'>Nama Belakang *</Label>
+                      <Label htmlFor='lastName' className='mb-2'>
+                        Nama Belakang *
+                      </Label>
                       <Input
                         id='lastName'
                         value={formData.lastName}
                         onChange={(e) =>
                           setFormData({ ...formData, lastName: e.target.value })
                         }
+                        type='text'
                         required
+                        className='focus-visible:ring-2 focus-visible:ring-red-500'
                       />
                     </div>
                   </div>
 
                   <div className='grid gap-4 md:grid-cols-2'>
                     <div>
-                      <Label htmlFor='email'>Alamat Email *</Label>
+                      <Label htmlFor='email' className='mb-2'>
+                        Alamat Email *
+                      </Label>
                       <Input
                         id='email'
                         type='email'
@@ -90,10 +122,13 @@ export default function ContactForm() {
                           setFormData({ ...formData, email: e.target.value })
                         }
                         required
+                        className='focus-visible:ring-2 focus-visible:ring-red-500'
                       />
                     </div>
                     <div>
-                      <Label htmlFor='phone'>Nomor Telepon</Label>
+                      <Label htmlFor='phone' className='mb-2'>
+                        Nomor Telepon
+                      </Label>
                       <Input
                         id='phone'
                         type='tel'
@@ -101,33 +136,40 @@ export default function ContactForm() {
                         onChange={(e) =>
                           setFormData({ ...formData, phone: e.target.value })
                         }
+                        className='focus-visible:ring-2 focus-visible:ring-red-500'
                       />
                     </div>
                   </div>
 
                   <div>
-                    <Label htmlFor='company'>Nama Perusahaan</Label>
+                    <Label htmlFor='company' className='mb-2'>
+                      Nama Perusahaan
+                    </Label>
                     <Input
                       id='company'
                       value={formData.company}
                       onChange={(e) =>
                         setFormData({ ...formData, company: e.target.value })
                       }
+                      className='focus-visible:ring-2 focus-visible:ring-red-500'
                     />
                   </div>
 
                   <div>
-                    <Label htmlFor='service'>Layanan yang Diminati</Label>
+                    <Label htmlFor='service' className='mb-2'>
+                      Layanan yang Diminati *
+                    </Label>
                     <Select
                       value={formData.service}
                       onValueChange={(value) =>
                         setFormData({ ...formData, service: value })
-                      }>
-                      <SelectTrigger>
+                      }
+                      required>
+                      <SelectTrigger className='bg-white'>
                         <SelectValue placeholder='Pilih layanan' />
                       </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value='viachat'>VIaChat - WhatsApp API</SelectItem>
+                      <SelectContent className='bg-white'>
+                        <SelectItem value='viachat'>ViaChat - WhatsApp API</SelectItem>
                         <SelectItem value='brainet'>
                           Brainet - Layanan Internet
                         </SelectItem>
@@ -139,29 +181,29 @@ export default function ContactForm() {
                   </div>
 
                   <div>
-                    <Label htmlFor='budget'>Anggaran Proyek</Label>
+                    <Label htmlFor='budget' className='mb-2'>
+                      Anggaran Proyek
+                    </Label>
                     <Select
                       value={formData.budget}
                       onValueChange={(value) =>
                         setFormData({ ...formData, budget: value })
                       }>
-                      <SelectTrigger>
+                      <SelectTrigger className='bg-white'>
                         <SelectValue placeholder='Pilih rentang anggaran' />
                       </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value='under-5k'>Di bawah Rp 70.000.000</SelectItem>
-                        <SelectItem value='5k-15k'>
-                          Rp 70.000.000 - Rp 210.000.000
+                      <SelectContent className='bg-white'>
+                        <SelectItem value='under-10jt'>Di bawah Rp 10.000.000</SelectItem>
+                        <SelectItem value='10jt-50jt'>
+                          Rp 10.000.000 - Rp 50.000.000
                         </SelectItem>
-                        <SelectItem value='15k-50k'>
-                          Rp 210.000.000 - Rp 700.000.000
+                        <SelectItem value='50jt-150jt'>
+                          Rp 50.000.000 - Rp 150.000.000
                         </SelectItem>
-                        <SelectItem value='50k-100k'>
-                          Rp 700.000.000 - Rp 1.400.000.000
+                        <SelectItem value='150jt-500jt'>
+                          Rp 150.000.000 - Rp 500.000.000
                         </SelectItem>
-                        <SelectItem value='over-100k'>
-                          Di atas Rp 1.400.000.000
-                        </SelectItem>
+                        <SelectItem value='over-500jt'>Di atas Rp 500.000.000</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -181,19 +223,6 @@ export default function ContactForm() {
                   </div>
 
                   <div className='space-y-4'>
-                    <div className='flex items-center space-x-2'>
-                      <Checkbox
-                        id='newsletter'
-                        checked={formData.newsletter}
-                        onCheckedChange={(checked) =>
-                          setFormData({ ...formData, newsletter: checked as boolean })
-                        }
-                      />
-                      <Label htmlFor='newsletter' className='text-sm'>
-                        Berlangganan buletin kami untuk pembaruan dan wawasan
-                      </Label>
-                    </div>
-
                     <div className='flex items-center space-x-2'>
                       <Checkbox
                         id='terms'
@@ -217,7 +246,11 @@ export default function ContactForm() {
                     </div>
                   </div>
 
-                  <Button type='submit' className='w-full' size='lg'>
+                  <Button
+                    type='submit'
+                    size='lg'
+                    className='w-full bg-red-500 text-white hover:bg-red-600 '
+                    disabled={!isFormValid}>
                     Kirim Pesan
                   </Button>
                 </form>
@@ -226,26 +259,6 @@ export default function ContactForm() {
           </div>
 
           <div className='space-y-6'>
-            <Card>
-              <CardHeader>
-                <div className='flex items-center gap-3'>
-                  <div className='flex h-10 w-10 items-center justify-center rounded-full bg-blue-100'>
-                    <Headphones className='h-5 w-5 text-blue-600' />
-                  </div>
-                  <CardTitle className='text-lg'>Dukungan 24/7</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className='text-sm text-muted-foreground mb-3'>
-                  Tim dukungan ahli kami tersedia sepanjang waktu untuk membantu Anda
-                  dengan pertanyaan atau masalah.
-                </p>
-                <Button variant='outline' size='sm'>
-                  Akses Portal Dukungan
-                </Button>
-              </CardContent>
-            </Card>
-
             <Card>
               <CardHeader>
                 <div className='flex items-center gap-3'>
@@ -269,25 +282,6 @@ export default function ContactForm() {
             <Card>
               <CardHeader>
                 <div className='flex items-center gap-3'>
-                  <div className='flex h-10 w-10 items-center justify-center rounded-full bg-purple-100'>
-                    <Download className='h-5 w-5 text-purple-600' />
-                  </div>
-                  <CardTitle className='text-lg'>Unduh Sumber Daya</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className='text-sm text-muted-foreground mb-3'>
-                  Akses whitepaper, studi kasus, dan dokumentasi teknis kami.
-                </p>
-                <Button variant='outline' size='sm'>
-                  Lihat Sumber Daya
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <div className='flex items-center gap-3'>
                   <div className='flex h-10 w-10 items-center justify-center rounded-full bg-orange-100'>
                     <Users className='h-5 w-5 text-orange-600' />
                   </div>
@@ -303,7 +297,7 @@ export default function ContactForm() {
                     Facebook
                   </Button>
                   <Button variant='outline' size='sm'>
-                    LinkedIn
+                    Instagram
                   </Button>
                 </div>
               </CardContent>
