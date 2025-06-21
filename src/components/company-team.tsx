@@ -6,21 +6,27 @@ const team = [
   {
     name: 'Eko Rudiyanto',
     position: 'Founder & CEO',
-    image: '',
+    image:
+      'https://brain.jaylangkung.co.id/source/1/Screenshot%202025-06-21%20at%2013-04-43.png',
   },
   {
     name: 'Defrian Tri Ramadhan Putra',
-    position: '',
+    position: 'Kepala Administrasi',
     image: 'https://brain.jaylangkung.co.id/source/1/defrian.jpg',
   },
   {
-    name: 'Kusuma',
-    position: '',
+    name: 'Agung Setyo Budi',
+    position: 'Kepala Teknisi',
+    image: 'https://brain.jaylangkung.co.id/source/1/agung.jpg',
+  },
+  {
+    name: 'Kusuma Hadzer Mumarhaban',
+    position: 'Teknisi',
     image: '',
   },
   {
-    name: 'Okta',
-    position: '',
+    name: 'Hanif Naufal Ashari',
+    position: 'Developer',
     image: '',
   },
   {
@@ -33,11 +39,6 @@ const team = [
     position: 'Developer',
     image: '',
   },
-  {
-    name: 'Hanif Naufal Ashari',
-    position: 'Developer',
-    image: '',
-  },
 ];
 
 export default function CompanyTeam() {
@@ -45,9 +46,9 @@ export default function CompanyTeam() {
     <section className='py-20'>
       <div className='container mx-auto px-4'>
         <div className='text-center'>
-          <h2 className='text-3xl font-bold lg:text-4xl'>Meet Our Development Team</h2>
+          <h2 className='text-3xl font-bold lg:text-4xl'>Temui Tim Kami</h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            The talented developers behind our products
+            Setiap anggota tim kami memiliki keahlian unik yang berkontribusi pada kesuksesan bersama.
           </p>
           <div className='mx-auto mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-teal-600'></div>
         </div>
