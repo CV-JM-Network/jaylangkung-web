@@ -1,8 +1,8 @@
-import { Hero } from "@/components/hero"
-import { ServicesOverview } from "@/components/services-overview"
-import { WhyChooseUs } from "@/components/why-choose-us"
-import { Testimonials } from "@/components/testimonials"
-import { CallToAction } from "@/components/call-to-action"
+import CallToAction from "@/components/call-to-action"
+import Hero from "@/components/hero"
+import ServicesOverview from "@/components/services-overview"
+import Testimonials from "@/components/testimonials"
+import WhyChooseUs from "@/components/why-choose-us"
 
 export default function HomePage() {
   return (
