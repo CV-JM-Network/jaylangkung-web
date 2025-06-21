@@ -36,7 +36,7 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="bg-gray-100 py-20">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-bold lg:text-4xl">Mengapa Memilih JM NETWORK?</h2>
@@ -47,10 +47,10 @@ export default function WhyChooseUs() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <Card key={index} className="group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <Card key={index} className="group transition-all duration-300 hover:-translate-y-1 bg-white hover:shadow-lg">
               <CardContent className="p-6 text-center">
                 <div className="mb-4 flex justify-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-teal-600 text-white">
                     <feature.icon className="h-8 w-8" />
                   </div>
                 </div>

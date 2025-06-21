@@ -57,16 +57,16 @@ export default function CompanyMissionCulture() {
           <p className='mt-4 text-lg text-muted-foreground'>
             Membangun masa depan komunikasi digital dengan nilai dan budaya yang kuat
           </p>
-          <div className='mx-auto mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-600'></div>
+          <div className='mx-auto mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-teal-600'></div>
         </div>
 
         {/* Mission & Vision */}
         <div className='mt-16 grid gap-8 lg:grid-cols-3'>
           <Card className='bg-white group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl'>
-            <div className='absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-500 to-purple-600'></div>
+            <div className='absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-500 to-teal-600'></div>
             <CardContent className='p-8 text-center'>
               <div className='mb-6 flex justify-center'>
-                <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white'>
+                <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-teal-600 text-white'>
                   <Target className='h-8 w-8' />
                 </div>
               </div>
@@ -80,10 +80,10 @@ export default function CompanyMissionCulture() {
           </Card>
 
           <Card className='bg-white group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl'>
-            <div className='absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-500 to-purple-600'></div>
+            <div className='absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-500 to-teal-600'></div>
             <CardContent className='p-8 text-center'>
               <div className='mb-6 flex justify-center'>
-                <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white'>
+                <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-teal-600 text-white'>
                   <Eye className='h-8 w-8' />
                 </div>
               </div>
@@ -97,10 +97,10 @@ export default function CompanyMissionCulture() {
           </Card>
 
           <Card className='bg-white group relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl'>
-            <div className='absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-500 to-purple-600'></div>
+            <div className='absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-blue-500 to-teal-600'></div>
             <CardContent className='p-8 text-center'>
               <div className='mb-6 flex justify-center'>
-                <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white'>
+                <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-teal-600 text-white'>
                   <Heart className='h-8 w-8' />
                 </div>
               </div>
@@ -124,7 +124,7 @@ export default function CompanyMissionCulture() {
             <p className='mt-2 text-md text-muted-foreground'>
               Membangun tempat kerja di mana inovasi berkembang dan orang tumbuh
             </p>
-            <div className='mx-auto mt-3 h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-600'></div>
+            <div className='mx-auto mt-3 h-1 w-16 bg-gradient-to-r from-blue-500 to-teal-600'></div>
           </div>
           <div className='mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
             {cultureItems.map((item, index) => (
@@ -133,7 +133,7 @@ export default function CompanyMissionCulture() {
                 className='bg-white group transition-all duration-300 hover:-translate-y-1 hover:shadow-lg'>
                 <CardContent className='p-6 text-center'>
                   <div className='mb-4 flex justify-center'>
-                    <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white transition-transform duration-300 group-hover:scale-110'>
+                    <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-teal-600 text-white transition-transform duration-300 group-hover:scale-110'>
                       <item.icon className='h-8 w-8' />
                     </div>
                   </div>

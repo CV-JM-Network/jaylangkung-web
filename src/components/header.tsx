@@ -42,7 +42,7 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className='sticky top-0 z-50 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl'>
+    <header className='sticky top-0 z-50 w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white shadow-xl'>
       <div className='container mx-auto flex h-16 items-center justify-between px-4'>
         <Link href='/' className='flex items-center space-x-2'>
           <Image

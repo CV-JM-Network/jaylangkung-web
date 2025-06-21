@@ -49,7 +49,7 @@ export default function CompanyTeam() {
           <p className='mt-4 text-lg text-muted-foreground'>
             The talented developers behind our products
           </p>
-          <div className='mx-auto mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-600'></div>
+          <div className='mx-auto mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-teal-600'></div>
         </div>
 
         <div className='mt-16 grid gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>

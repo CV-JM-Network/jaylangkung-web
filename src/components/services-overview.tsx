@@ -58,7 +58,7 @@ export default function ServicesOverview() {
           {services.map((service, index) => (
             <Card key={index} className="group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
               <CardHeader>
-                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 text-white">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-teal-600 text-white">
                   <service.icon className="h-8 w-8" />
                 </div>
                 <CardTitle className="text-xl">{service.title}</CardTitle>

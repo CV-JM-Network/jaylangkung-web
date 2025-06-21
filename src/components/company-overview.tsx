@@ -24,7 +24,7 @@ export default function CompanyOverview() {
           <div className='lg:col-span-2'>
             <div className='mb-8'>
               <h2 className='text-3xl font-bold lg:text-4xl'>Kisah Kami</h2>
-              <div className='mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-600'></div>
+              <div className='mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-teal-600'></div>
             </div>
 
             <div className='space-y-6 text-lg leading-relaxed text-muted-foreground'>
@@ -67,7 +67,7 @@ export default function CompanyOverview() {
             <Card className='overflow-hidden'>
               <CardContent className='p-6'>
                 <div className='mb-6 flex items-center gap-3'>
-                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white'>
+                  <div className='flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-teal-600 text-white'>
                     <TrendingUp className='h-6 w-6' />
                   </div>
                   <h3 className='text-xl font-semibold'>Perjalanan Pertumbuhan</h3>

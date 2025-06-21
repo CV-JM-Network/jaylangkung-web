@@ -32,16 +32,16 @@ const contactCards = [
 
 export default function ContactInfo() {
   return (
-    <section className='bg-gray-50 py-16'>
+    <section className='bg-gray-100 py-16'>
       <div className='container mx-auto px-4'>
         <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
           {contactCards.map((card, index) => (
             <Card
               key={index}
-              className='group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl'>
+              className='group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl bg-white'>
               <CardContent className='p-6 text-center'>
                 <div className='mb-4 flex justify-center'>
-                  <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white'>
+                  <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-teal-600 text-white'>
                     <card.icon className='h-8 w-8' />
                   </div>
                 </div>

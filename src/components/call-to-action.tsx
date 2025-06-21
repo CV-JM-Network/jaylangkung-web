@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function CallToAction() {
   return (
-    <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 py-20 text-white">
+    <section className="bg-gradient-to-br from-blue-600 via-teal-600 to-blue-800 py-20 text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold lg:text-4xl">Siap Mengubah Bisnis Anda?</h2>
         <p className="mt-4 text-lg opacity-90">
