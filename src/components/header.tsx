@@ -42,7 +42,7 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className='sticky top-0 z-50 w-full border-b bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 text-white shadow-lg'>
+    <header className='sticky top-0 z-50 w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl'>
       <div className='container mx-auto flex h-16 items-center justify-between px-4'>
         <Link href='/' className='flex items-center space-x-2'>
           <Image
@@ -54,7 +54,7 @@ export default function Header() {
           />
           <div>
             <h1 className='text-xl font-bold'>JM NETWORK</h1>
-            <p className='text-xs opacity-90'>Menghubungkan Masa Depan, Hari Ini</p>
+            <p className='text-xs opacity-90'>Transformasi Masa Depan Dimulai Hari Ini</p>
           </div>
         </Link>
 
