@@ -1,7 +1,7 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { MessageSquare, Wifi, Network, Check } from "lucide-react"
+import { Check, MessageSquare, Network, Wifi } from "lucide-react"
+import Link from "next/link"
 
 const services = [
   {

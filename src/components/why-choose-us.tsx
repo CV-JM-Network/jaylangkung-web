@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Rocket, Shield, Headphones, TrendingUp, DollarSign, Globe } from "lucide-react"
+import { DollarSign, Globe, Headphones, Rocket, Shield, TrendingUp } from "lucide-react"
 
 const features = [
   {

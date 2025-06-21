@@ -34,7 +34,7 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="transition-all duration-300 hover:shadow-lg">
               <CardContent className="p-6">
-                <blockquote className="mb-4 text-lg italic">"{testimonial.content}"</blockquote>
+                <blockquote className="mb-4 text-lg italic">&quot;{testimonial.content}&quot;</blockquote>
                 <div>
                   <h4 className="font-semibold">{testimonial.author}</h4>
                   <p className="text-sm text-muted-foreground">{testimonial.position}</p>

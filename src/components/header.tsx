@@ -1,9 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import {
   NavigationMenu,
@@ -14,8 +10,12 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Menu } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 
 const services = [
   {
@@ -88,7 +88,7 @@ export default function Header() {
               <NavigationMenuTrigger className='hover:bg-white/20 data-[state=open]:bg-white/20'>
                 Layanan
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="bg-white text-black">
+              <NavigationMenuContent className='bg-white text-black'>
                 <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
                   {services.map((service) => (
                     <li key={service.title}>
