@@ -1,8 +1,7 @@
 import CallToAction from '@/components/call-to-action';
-import CompanyCulture from '@/components/company-culture';
+import CompanyMissionCulture from '@/components/company-mission-culture';
 import CompanyOverview from '@/components/company-overview';
-import LeadershipTeam from '@/components/leadership-team';
-import MissionVisionValues from '@/components/mission-vision-values';
+import CompanyTeam from '@/components/company-team';
 import PageHero from '@/components/page-hero';
 
 export default function AboutPage() {
@@ -10,13 +9,12 @@ export default function AboutPage() {
     <main>
       <PageHero
         title='Tentang JM NETWORK'
-        subtitle='Mempelopori masa depan komunikasi digital dan konektivitas sejak 2020'
+        subtitle='Mempelopori masa depan komunikasi digital dan konektivitas sejak 2015'
         breadcrumb={[{ label: 'Beranda', href: '/' }, { label: 'Tentang Kami' }]}
       />
       <CompanyOverview />
-      <MissionVisionValues />
-      <LeadershipTeam />
-      <CompanyCulture />
+      <CompanyMissionCulture />
+      <CompanyTeam />
       <CallToAction />
     </main>
   );

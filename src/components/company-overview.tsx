@@ -2,18 +2,18 @@ import { Card, CardContent } from '@/components/ui/card';
 import { TrendingUp } from 'lucide-react';
 
 const stats = [
-  { number: '500+', label: 'Klien Puas' },
-  { number: '99.9%', label: 'Jaminan Uptime' },
-  { number: '50+', label: 'Negara Terlayani' },
+  { number: '100+', label: 'Klien Puas' },
+  { number: '99%', label: 'Jaminan Uptime' },
+  { number: '10+', label: 'Kota Besar' },
   { number: '24/7', label: 'Dukungan Ahli' },
 ];
 
 const timeline = [
-  { year: '2020', desc: 'Perusahaan Didirikan' },
-  { year: '2021', desc: '100 Klien Pertama' },
-  { year: '2022', desc: 'Ekspansi Internasional' },
-  { year: '2023', desc: 'Pencapaian 500+ Klien' },
-  { year: '2024', desc: 'Pemimpin Pasar' },
+  { year: '2015', desc: 'Perusahaan Didirikan' },
+  { year: '2016', desc: 'Peluncuran Platform Pertama' },
+  { year: '2018', desc: 'Mencapai 50 Klien' },
+  { year: '2020', desc: 'Ekspansi ke 10 Kota Besar' },
+  { year: '2024', desc: 'Mencapai 100 Klien se-Indonesia' },
 ];
 
 export default function CompanyOverview() {
@@ -29,17 +29,17 @@ export default function CompanyOverview() {
 
             <div className='space-y-6 text-lg leading-relaxed text-muted-foreground'>
               <p className='text-xl font-medium text-foreground'>
-                Didirikan pada tahun 2020 oleh tim teknolog visioner, JM NETWORK muncul
-                dari ide sederhana namun kuat: merevolusi cara bisnis dan individu
-                berkomunikasi di era digital.
+                Didirikan pada tahun 2015 oleh tim teknolog visioner, JM NETWORK muncul
+                dari ide sederhana namun kuat: merevolusi cara bisnis, individu, serta
+                kelompok masyarakat berkomunikasi di era digital.
               </p>
 
               <p>
-                Apa yang dimulai sebagai startup kecil dengan impian besar telah
-                berkembang menjadi penyedia solusi komunikasi inovatif terkemuka, melayani
-                lebih dari 500 perusahaan di lebih dari 50 negara. Perjalanan kami
-                ditandai dengan inovasi berkelanjutan, komitmen yang teguh terhadap
-                kualitas, dan fokus yang tak kenal lelah pada kesuksesan pelanggan.
+                Sejak awal, kami telah berkomitmen untuk menyediakan layanan komunikasi
+                yang andal, aman, dan mudah digunakan. Dengan menggabungkan teknologi
+                mutakhir dengan pendekatan yang berorientasi pada pelanggan, kami telah
+                menciptakan platform yang memungkinkan bisnis untuk berkomunikasi secara
+                efisien dan efektif, terlepas dari lokasi atau ukuran mereka.
               </p>
 
               <p>
@@ -49,7 +49,7 @@ export default function CompanyOverview() {
               </p>
             </div>
 
-            <div className='mt-12 grid grid-cols-2 gap-6 rounded-2xl bg-gray-50 p-8 lg:grid-cols-4'>
+            <div className='mt-12 grid grid-cols-2 gap-6 rounded-2xl bg-gray-100 p-8 lg:grid-cols-4'>
               {stats.map((stat, index) => (
                 <div key={index} className='text-center'>
                   <div className='text-3xl font-bold text-blue-600 lg:text-4xl'>
