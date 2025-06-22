@@ -42,6 +42,8 @@ export default function FeaturesGrid({
   features,
   colors,
 }: FeaturesGridProps) {
+  const getGradientBg = () => `linear-gradient(135deg, ${colors.join(', ')})`;
+
   return (
     <section className='py-20'>
       <div className='container mx-auto px-4'>
@@ -50,7 +52,7 @@ export default function FeaturesGrid({
           <p className='mt-4 text-lg text-muted-foreground'>{subtitle}</p>
           <div
             className='mx-auto mt-4 h-1 w-16'
-            style={{ background: `linear-gradient(135deg, ${colors.join(', ')})` }}></div>
+            style={{ background: getGradientBg() }}></div>
         </div>
 
         <div className='mt-16 grid gap-8 lg:grid-cols-2'>
@@ -61,7 +63,9 @@ export default function FeaturesGrid({
                 key={index}
                 className='group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl'>
                 <CardHeader>
-                  <div className='mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-gradient-to-br from-[#3aa2cf] to-[#6dad51] text-white'>
+                  <div
+                    className='mb-4 flex h-16 w-16 items-center justify-center rounded-lg text-white'
+                    style={{ background: getGradientBg() }}>
                     <FeatureIcon className='h-8 w-8' />
                   </div>
                   <CardTitle className='text-xl'>{feature.title}</CardTitle>

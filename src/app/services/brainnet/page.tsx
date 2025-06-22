@@ -6,6 +6,9 @@ import InternetPlans from '@/components/internet-plans';
 import ServiceHero from '@/components/service-hero';
 import SpeedComparison from '@/components/speed-comparison';
 
+// Color palette for Brainnet
+const colors = ['#008FFF', '#FF7B13', '#008FFF'];
+
 const brainnetFeatures: {
   icon:
     | 'Zap'
@@ -24,11 +27,11 @@ const brainnetFeatures: {
     icon: 'Zap',
     title: 'Kecepatan Kilat',
     description:
-      'Hingga 10 Gbps download dan 1 Gbps upload dengan jaringan 100% fiber-optic. Tanpa throttling, tanpa batas data, hanya kecepatan murni.',
+      'Hingga 1 Gbps download dan 1 Gbps upload dengan jaringan 100% fiber-optic. Tanpa throttling, tanpa batas data, hanya kecepatan murni.',
     benefits: [
+      'Tanpa batas data',
       'Kecepatan upload/download simetris',
       'Performa konsisten 24/7',
-      'Infrastruktur siap masa depan',
       'Latensi rendah untuk gaming & video call',
     ],
   },
@@ -46,14 +49,14 @@ const brainnetFeatures: {
   },
   {
     icon: 'TrendingUp',
-    title: '99.9% Uptime SLA',
+    title: '99% Uptime SLA',
     description:
       'Keandalan terjamin dengan jalur jaringan redundan, sistem backup, dan monitoring proaktif untuk memastikan uptime maksimal.',
     benefits: [
       'Jalur fiber redundan',
       'Sistem failover otomatis',
       'Monitoring jaringan proaktif',
-      'Kredit SLA untuk downtime',
+      'Laporan uptime transparan',
     ],
   },
   {
@@ -74,15 +77,15 @@ export default function Brainnet() {
   return (
     <main>
       <ServiceHero
-        badgeImage=''
+        badgeImage='/assets/brainnet-logo.png'
         title='Brainnet'
         subtitle='Penyedia Layanan Internet Premium'
         description='Rasakan konektivitas internet super cepat dan andal dengan infrastruktur jaringan fiber-optic kami. Dirancang untuk bisnis dan rumah yang menuntut yang terbaik dalam kecepatan, keamanan, dan keandalan.'
         stats={[
-          { value: '10 Gbps', label: 'Kecepatan Maksimal' },
+          { value: '1 Gbps', label: 'Kecepatan Maksimal' },
           { value: '99.9%', label: 'Uptime SLA' },
           { value: '24/7', label: 'Dukungan Ahli' },
-          { value: '<5ms', label: 'Latensi Rata-rata' },
+          { value: '<10ms', label: 'Latensi Rata-rata' },
         ]}
         primaryAction={{ text: 'Lihat Paket', href: '#pricing' }}
         secondaryAction={{ text: 'Dapatkan Quote', href: '/contact' }}
@@ -91,17 +94,17 @@ export default function Brainnet() {
           { label: 'Layanan', href: '/services' },
           { label: 'Brainnet' },
         ]}
-        colors={[]}
+        colors={colors}
       />
 
       <FeaturesGrid
         title='Mengapa Memilih Internet Brainnet'
         subtitle='Rasakan perbedaan dengan teknologi fiber-optic mutakhir dan kualitas layanan yang tak tertandingi'
         features={brainnetFeatures}
-        colors={['#3aa2cf', '#6dad51', '#3aa2cf']} // change this later
+        colors={colors.slice(0, 2)}
       />
 
-      <SpeedComparison />
+      <SpeedComparison colors={colors.slice(0, 2)} />
 
       <InternetPlans />
 

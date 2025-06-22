@@ -89,7 +89,7 @@ export default function ServiceHero({
             </div>
           </div>
           <div className='flex justify-center'>
-            <Image src={badgeImage} alt='Service Hero' width={256} height={256} />
+            <Image src={badgeImage} alt='Service Hero' width={300} height={300} />
           </div>
         </div>
       </div>
