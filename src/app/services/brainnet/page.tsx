@@ -106,9 +106,9 @@ export default function Brainnet() {
 
       <SpeedComparison colors={colors.slice(0, 2)} />
 
-      <InternetPlans />
+      <InternetPlans colors={colors.slice(0, 2)} />
 
-      <InstallationProcess />
+      <InstallationProcess colors={colors.slice(0, 2)} />
 
       <FAQBrainnet />
 

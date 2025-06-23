@@ -201,34 +201,61 @@ export default function InternetPlans({ colors }: InternetPlansProps) {
             style={{ background: getGradientBg() }}></div>
         </div>
 
-        <div className='mt-16'>
+        <div className='mt-8'>
           <Tabs value={activeTab} onValueChange={setActiveTab} className='w-full'>
             <TabsList className='grid w-full grid-cols-2 gap-x-4 lg:w-1/2 lg:mx-auto'>
               <TabsTrigger
                 value='residential'
-                className={`flex items-center gap-2 px-6 py-2 rounded-lg transition-all duration-200 ${
+                className={`flex items-center gap-2 px-8 py-3 rounded-xl text-base font-semibold transition-all duration-200 shadow-md border-none focus:outline-none focus:ring-2 focus:ring-blue-300
+                  ${
+                    activeTab === 'residential'
+                      ? 'text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 border border-gray-200'
+                  }
+                `}
+                style={
                   activeTab === 'residential'
-                    ? 'bg-white'
-                    : 'border border-gray-300 bg-gray-50'
-                }`}>
-                <Home className='h-4 w-4' />
-                <span className='hidden sm:inline'>Residential</span>
-                <span className='sm:hidden'>Home</span>
+                    ? {
+                        background: colors[0],
+                        boxShadow: '0 2px 12px 0 rgba(0,0,0,0.10)',
+                      }
+                    : {}
+                }>
+                <Home
+                  className={`h-5 w-5 ${
+                    activeTab === 'residential' ? 'text-white' : 'text-gray-500'
+                  }`}
+                />
+                Residential
               </TabsTrigger>
               <TabsTrigger
                 value='enterprise'
-                className={`flex items-center gap-2 px-6 py-2 rounded-lg transition-all duration-200 ${
+                className={`flex items-center gap-2 px-8 py-3 rounded-xl text-base font-semibold transition-all duration-200 shadow-md border-none focus:outline-none focus:ring-2 focus:ring-blue-300
+                  ${
+                    activeTab === 'enterprise'
+                      ? 'text-white shadow-lg scale-105'
+                      : 'bg-white text-gray-700 border border-gray-200'
+                  }
+                `}
+                style={
                   activeTab === 'enterprise'
-                    ? 'bg-white'
-                    : 'border border-gray-300 bg-gray-50'
-                }`}>
-                <Building2 className='h-4 w-4' />
-                <span className='hidden sm:inline'>Enterprise</span>
-                <span className='sm:hidden'>Corp</span>
+                    ? {
+                        background: colors[1],
+                        boxShadow: '0 2px 12px 0 rgba(0,0,0,0.10)',
+                      }
+                    : {}
+                }>
+                <Building2
+                  className={`h-5 w-5 ${
+                    activeTab === 'enterprise' ? 'text-white' : 'text-gray-500'
+                  }`}
+                />
+                Enterprise
               </TabsTrigger>
             </TabsList>
-
-            <TabsContent value='residential' className='mt-8'>
+            <TabsContent
+              value='residential'
+              className='mt-8 transition-all duration-500 ease-in-out animate-rise-up'>
               <div className='relative flex items-center'>
                 <button
                   type='button'
@@ -358,7 +385,9 @@ export default function InternetPlans({ colors }: InternetPlansProps) {
               </div>
             </TabsContent>
 
-            <TabsContent value='enterprise' className='mt-8'>
+            <TabsContent
+              value='enterprise'
+              className='mt-8 transition-all duration-500 ease-in-out animate-rise-up'>
               <div className='mx-auto max-w-4xl text-center'>
                 <div className='mb-12'>
                   <h3 className='text-2xl font-bold'>Solusi Enterprise</h3>
