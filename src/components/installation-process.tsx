@@ -10,6 +10,10 @@ import {
   Wrench,
 } from 'lucide-react';
 
+interface InstallationStepProps {
+  colors: string[];
+}
+
 const processSteps = [
   {
     step: '01',
@@ -37,7 +41,7 @@ const processSteps = [
       'Perencanaan penempatan router',
       'Estimasi waktu instalasi',
     ],
-    timeframe: '1-2 hari',
+    timeframe: '1-3 hari',
   },
   {
     step: '03',
@@ -72,18 +76,18 @@ const processSteps = [
 const installationFeatures = [
   {
     icon: HardHat,
-    title: 'Teknisi Bersertifikat',
+    title: 'TEKNISI BERSERTIFIKAT',
     description:
       'Tim instalasi profesional dengan sertifikasi dan pengalaman bertahun-tahun',
   },
   {
     icon: Wrench,
-    title: 'Peralatan Professional',
+    title: 'PERALATAN PROFESIONAL',
     description: 'Menggunakan tools dan equipment grade enterprise untuk hasil terbaik',
   },
   {
     icon: Wifi,
-    title: 'Instalasi Bersih',
+    title: 'INSTALLASI RAPI',
     description: 'Pemasangan rapi tanpa merusak estetika rumah atau kantor Anda',
   },
 ];
@@ -109,7 +113,10 @@ const testingResults = [
   },
 ];
 
-export default function InstallationProcess() {
+export default function InstallationProcess({ colors }: InstallationStepProps) {
+  // Helper functions for style consistency
+  const getGradientBg = () => `linear-gradient(135deg, ${colors.join(', ')})`;
+
   return (
     <section className='py-20'>
       <div className='container mx-auto px-4'>
@@ -118,7 +125,9 @@ export default function InstallationProcess() {
           <p className='mt-4 text-lg text-muted-foreground'>
             Terhubung dengan cepat melalui proses instalasi yang efisien
           </p>
-          <div className='mx-auto mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-purple-600'></div>
+          <div
+            className='mx-auto mt-4 h-1 w-16'
+            style={{ background: getGradientBg() }}></div>
         </div>
 
         <div className='mt-16 space-y-16'>
@@ -134,7 +143,9 @@ export default function InstallationProcess() {
                 }`}>
                 <div className={`space-y-6 ${isReverse ? 'lg:col-start-2' : ''}`}>
                   <div className='flex items-center gap-4'>
-                    <div className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-purple-600 text-white'>
+                    <div
+                      className='flex h-16 w-16 items-center justify-center rounded-full text-white'
+                      style={{ background: getGradientBg() }}>
                       <StepIcon className='h-8 w-8' />
                     </div>
                     <div>
@@ -164,10 +175,10 @@ export default function InstallationProcess() {
                 </div>
 
                 <div className={`${isReverse ? 'lg:col-start-1' : ''}`}>
-                  <Card className='overflow-hidden'>
+                  <Card className='overflow-hidden bg-gradient-to-r from-blue-50 to-orange-50'>
                     <CardContent className='p-0'>
                       {index === 0 && (
-                        <div className='bg-gradient-to-br from-blue-50 to-purple-50 p-8'>
+                        <div style={{ background: getGradientBg() }} className='p-8'>
                           <div className='space-y-4'>
                             <div className='rounded-lg bg-white p-4 shadow-sm'>
                               <div className='mb-2 text-sm font-medium text-gray-600'>
@@ -191,7 +202,7 @@ export default function InstallationProcess() {
                       )}
 
                       {index === 1 && (
-                        <div className='bg-gradient-to-br from-green-50 to-blue-50 p-8'>
+                        <div style={{ background: getGradientBg() }} className='p-8'>
                           <div className='space-y-4'>
                             <div className='rounded-lg bg-white p-4 shadow-sm'>
                               <div className='mb-3 text-sm font-medium text-gray-600'>
@@ -214,21 +225,25 @@ export default function InstallationProcess() {
                       )}
 
                       {index === 2 && (
-                        <div className='bg-gradient-to-br from-orange-50 to-red-50 p-8'>
+                        <div style={{ background: getGradientBg() }} className='p-8'>
                           <div className='grid gap-4 sm:grid-cols-3'>
                             {installationFeatures.map((feature, featureIndex) => {
                               const FeatureIcon = feature.icon;
                               return (
-                                <div key={featureIndex} className='text-center'>
+                                <div
+                                  key={featureIndex}
+                                  className='rounded-lg bg-white p-4 shadow-sm flex flex-col items-center'>
                                   <div className='mb-2 flex justify-center'>
-                                    <div className='flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm'>
-                                      <FeatureIcon className='h-6 w-6 text-orange-600' />
+                                    <div
+                                      className='flex h-12 w-12 items-center justify-center rounded-full'
+                                      style={{ background: getGradientBg() }}>
+                                      <FeatureIcon className='h-6 w-6 text-white' />
                                     </div>
                                   </div>
-                                  <div className='text-sm font-medium'>
+                                  <div className='text-sm font-medium text-gray-900 text-center'>
                                     {feature.title}
                                   </div>
-                                  <div className='text-xs text-muted-foreground'>
+                                  <div className='mt-1 text-xs text-muted-foreground text-center'>
                                     {feature.description}
                                   </div>
                                 </div>
@@ -239,7 +254,7 @@ export default function InstallationProcess() {
                       )}
 
                       {index === 3 && (
-                        <div className='bg-gradient-to-br from-green-50 to-emerald-50 p-8'>
+                        <div style={{ background: getGradientBg() }} className='p-8'>
                           <div className='space-y-4'>
                             {testingResults.map((result, resultIndex) => {
                               const ResultIcon = result.icon;

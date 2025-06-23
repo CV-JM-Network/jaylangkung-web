@@ -110,7 +110,7 @@ export default function Brainnet() {
 
       <InstallationProcess colors={colors.slice(0, 2)} />
 
-      <FAQBrainnet />
+      <FAQBrainnet colors={colors.slice(0, 2)} />
 
       <CallToAction />
     </main>

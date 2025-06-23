@@ -149,13 +149,13 @@ const viaChatQuestions = [
   },
 ];
 
-export function FAQBrainnet() {
+export function FAQBrainnet({ colors }: { colors: string[] }) {
   return (
     <FAQ
       title='Pertanyaan Umum tentang Brainnet'
       subtitle='Temukan jawaban untuk pertanyaan umum tentang layanan internet fiber kami'
       questions={brainnetQuestions}
-      colors={['#4A90E2', '#50E3C2', '#9013FE']}
+      colors={colors}
     />
   );
 }
