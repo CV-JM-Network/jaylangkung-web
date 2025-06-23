@@ -181,7 +181,7 @@ export default function ViaChat() {
         colors={colors.slice(0, 2)}
       />
 
-      <FAQViaChat colors={colors} />
+      <FAQViaChat colors={colors.slice(0, 2)} />
 
       <CallToAction />
     </main>
