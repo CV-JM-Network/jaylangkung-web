@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import Link from 'next/link';
 
 interface ServiceHeroProps {
@@ -90,7 +90,7 @@ export default function ServiceHero({
           </div>
           <div className='flex justify-center'>
             {badgeImage !== '' && (
-              <Image src={badgeImage} alt='Service Hero' width={300} height={300} />
+              <img src={badgeImage} alt='Service Hero' width={300} height={300} />
             )}
           </div>
         </div>

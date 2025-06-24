@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { Facebook, Instagram } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-4'>
           <div>
             <div className='mb-4 flex items-center space-x-2'>
-              <Image
+              <img
                 src='/assets/logo.png'
                 alt='JM NETWORK Logo'
                 width={24}
@@ -20,9 +20,7 @@ export default function Footer() {
               />
               <h3 className='text-lg font-bold'>JM NETWORK</h3>
             </div>
-            <p className='mb-4 text-sm opacity-90'>
-              We Are Connected
-            </p>
+            <p className='mb-4 text-sm opacity-90'>We Are Connected</p>
             <div className='flex space-x-4'>
               <Link
                 href='https://www.facebook.com/profile.php?id=100063564693469'

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -12,7 +13,6 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -45,7 +45,7 @@ export default function Header() {
     <header className='sticky top-0 z-50 w-full bg-gradient-to-r from-blue-600 to-teal-600 text-white shadow-xl'>
       <div className='container mx-auto flex h-16 items-center justify-between px-4'>
         <Link href='/' className='flex items-center space-x-2'>
-          <Image
+          <img
             src='/assets/logo.png'
             alt='JM NETWORK Logo'
             width={32}

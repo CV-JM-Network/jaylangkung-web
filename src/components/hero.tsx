@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -31,7 +31,7 @@ export default function Hero() {
           </div>
           <div className='flex justify-center'>
             <div className=''>
-              <Image
+              <img
                 src='/assets/logo.png'
                 alt='Hero Image'
                 width={300}
