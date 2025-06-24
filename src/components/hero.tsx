@@ -42,7 +42,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className='mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3'>
+        <div className='mt-16 grid grid-cols-1 gap-8 sm:grid-cols-4'>
           <div className='text-center'>
             <h3 className='text-3xl font-bold text-white'>100+</h3>
             <p className='opacity-90'>Klien Puas</p>
@@ -54,6 +54,10 @@ export default function Hero() {
           <div className='text-center'>
             <h3 className='text-3xl font-bold text-white'>24/7</h3>
             <p className='opacity-90'>Dukungan</p>
+          </div>
+          <div className='text-center'>
+            <h3 className='text-3xl font-bold text-white'>10+</h3>
+            <p className='opacity-90'>Tahun Pengalaman</p>
           </div>
         </div>
       </div>

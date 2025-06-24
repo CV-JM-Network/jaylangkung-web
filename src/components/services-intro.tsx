@@ -5,7 +5,7 @@ import { Award, Clock, MessageSquare, Network, Shield, Users, Wifi } from 'lucid
 const highlights = [
   {
     icon: Users,
-    number: '500+',
+    number: '100+',
     label: 'Klien Terlayani',
     description: 'Dipercaya oleh perusahaan dari startup hingga enterprise',
   },
@@ -23,7 +23,7 @@ const highlights = [
   },
   {
     icon: Shield,
-    number: '5+',
+    number: '10+',
     label: 'Tahun Pengalaman',
     description: 'Pengalaman mendalam dalam industri teknologi',
   },
