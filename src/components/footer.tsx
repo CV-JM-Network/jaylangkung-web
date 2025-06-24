@@ -53,8 +53,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href='/services/networking' className='hover:text-red-400'>
-                  Jaringan
+                <Link href='/services/it-solution' className='hover:text-red-400'>
+                  IT Solution
                 </Link>
               </li>
             </ul>

@@ -83,36 +83,37 @@ const brainnetQuestions = [
   },
 ];
 
-const networkingQuestions = [
+const itSolutionQuestions = [
   {
-    question: 'Berapa lama implementasi jaringan biasanya memakan waktu?',
+    question:
+      'Berapa lama waktu yang dibutuhkan untuk mengembangkan aplikasi web/mobile?',
     answer:
-      'Timeline implementasi bervariasi berdasarkan ruang lingkup dan kompleksitas proyek. Jaringan kantor kecil biasanya memakan waktu 2-4 minggu, sementara deployment enterprise dapat berkisar dari 2-6 bulan. Kami menyediakan timeline proyek yang detail selama fase perencanaan dan bekerja sama dengan tim Anda untuk meminimalkan gangguan bisnis.',
+      'Timeline pengembangan bervariasi tergantung kompleksitas proyek. Aplikasi web sederhana biasanya 4-8 minggu, aplikasi mobile 6-12 minggu, dan sistem enterprise 3-6 bulan. Kami akan memberikan estimasi timeline yang detail setelah analisis kebutuhan awal dan selalu berusaha menepati deadline yang disepakati.',
   },
   {
-    question: 'Apakah Anda menyediakan dukungan 24/7 untuk semua solusi jaringan?',
+    question: 'Apakah Anda menyediakan maintenance dan support setelah proyek selesai?',
     answer:
-      'Kami menawarkan opsi dukungan bertingkat untuk menyesuaikan kebutuhan dan anggaran Anda. Tier dukungan Premium dan Enterprise kami termasuk monitoring dan dukungan 24/7. Dukungan Basic menyediakan coverage jam kerja dengan prosedur eskalasi darurat. Semua tier termasuk monitoring remote dan deteksi masalah proaktif.',
+      'Ya, kami menyediakan berbagai paket maintenance dan support. Termasuk bug fixes, security updates, performance monitoring, backup management, dan feature enhancements. Kami menawarkan paket support 24/7 untuk aplikasi mission-critical dan paket maintenance reguler untuk kebutuhan standar.',
   },
   {
-    question: 'Bisakah Anda bekerja dengan infrastruktur jaringan yang sudah ada?',
+    question: 'Teknologi apa saja yang Anda gunakan untuk pengembangan aplikasi?',
     answer:
-      'Tentu saja! Kami mengkhususkan diri dalam deployment greenfield dan upgrade brownfield. Tim kami akan menilai infrastruktur saat ini dan merancang solusi yang memaksimalkan investasi yang ada sambil mengatasi kebutuhan performa, keamanan, dan skalabilitas.',
+      'Kami menggunakan teknologi modern dan proven seperti React/Next.js, Vue.js untuk frontend; Node.js, Laravel, Python untuk backend; MySQL, PostgreSQL, MongoDB untuk database; React Native, Flutter untuk mobile; dan AWS, Azure, GCP untuk cloud infrastructure. Pemilihan teknologi disesuaikan dengan kebutuhan spesifik proyek Anda.',
   },
   {
-    question: 'Sertifikasi dan standar compliance apa yang Anda dukung?',
+    question: 'Bagaimana proses instalasi infrastruktur jaringan dan server?',
     answer:
-      'Tim kami memiliki sertifikasi industri termasuk CCIE, CISSP, dan kredensial khusus vendor. Kami merancang jaringan untuk memenuhi berbagai persyaratan compliance termasuk HIPAA, PCI-DSS, SOX, FISMA, dan ISO 27001. Setiap solusi disesuaikan dengan persyaratan regulasi dan keamanan spesifik Anda.',
+      'Proses dimulai dengan site survey dan analisis kebutuhan, diikuti dengan desain network topology, procurement equipment, instalasi fisik (termasuk utility pole jika diperlukan), konfigurasi sistem, testing, dan commissioning. Kami juga menyediakan dokumentasi lengkap dan training untuk tim IT Anda.',
   },
   {
-    question: 'Apakah Anda menyediakan layanan monitoring dan manajemen jaringan?',
+    question: 'Apakah bisa mengintegrasikan sistem baru dengan sistem yang sudah ada?',
     answer:
-      'Ya, kami menawarkan layanan monitoring dan manajemen jaringan yang komprehensif. Ini termasuk monitoring performa real-time, deteksi masalah proaktif, alerting otomatis, pelaporan performa, dan troubleshooting remote. NOC kami beroperasi 24/7 untuk memastikan performa jaringan optimal.',
+      'Tentu saja. Kami memiliki pengalaman luas dalam system integration dan API development. Kami dapat mengintegrasikan aplikasi baru dengan ERP, CRM, database legacy, atau sistem third-party lainnya. Tim kami akan melakukan assessment terhadap sistem existing dan merancang strategi integrasi yang optimal.',
   },
   {
-    question: 'Bagaimana Anda memastikan keamanan jaringan dan perlindungan data?',
+    question: 'Bagaimana Anda memastikan keamanan aplikasi dan data?',
     answer:
-      'Keamanan terintegrasi ke dalam setiap aspek desain jaringan kami. Kami mengimplementasikan strategi defense-in-depth termasuk segmentasi jaringan, kontrol akses, enkripsi, deteksi intrusi, dan assessment keamanan reguler. Semua solusi mengikuti best practice industri dan persyaratan compliance.',
+      'Keamanan adalah prioritas utama dalam setiap proyek. Kami menerapkan security best practices seperti encryption, secure authentication, input validation, SQL injection prevention, XSS protection, dan regular security audits. Untuk infrastruktur, kami implementasikan firewall, VPN, access control, dan monitoring systems.',
   },
 ];
 
@@ -160,13 +161,13 @@ export function FAQBrainnet({ colors }: { colors: string[] }) {
   );
 }
 
-export function FAQNetworking() {
+export function FAQITSolution({ colors }: { colors: string[] }) {
   return (
     <FAQ
-      title='Pertanyaan Umum tentang Layanan Jaringan'
-      subtitle='Pertanyaan umum tentang layanan dan solusi jaringan kami'
-      questions={networkingQuestions}
-      colors={['#4A90E2', '#50E3C2', '#9013FE']}
+      title='Pertanyaan Umum tentang IT Solution'
+      subtitle='Jawaban untuk pertanyaan yang sering diajukan tentang layanan IT komprehensif kami'
+      questions={itSolutionQuestions}
+      colors={colors}
     />
   );
 }

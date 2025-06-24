@@ -29,9 +29,9 @@ const services = [
     description: 'High-speed internet services',
   },
   {
-    title: 'Jaringan',
-    href: '/services/networking',
-    description: 'Enterprise networking solutions',
+    title: 'IT Solution',
+    href: '/services/it-solution',
+    description: 'Comprehensive IT services & solutions',
   },
 ];
 
