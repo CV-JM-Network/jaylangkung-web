@@ -89,14 +89,12 @@ export default function Header() {
                 Layanan
               </NavigationMenuTrigger>
               <NavigationMenuContent className='bg-white text-black'>
-                <ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]'>
+                <ul className='grid w-[300px] gap-3'>
                   {services.map((service) => (
                     <li key={service.title}>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href={service.href}
-                          className='block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground'>
-                          <div className='text-sm font-medium leading-none text-gray-900'>
+                      <NavigationMenuLink asChild className='hover:bg-sky-100'>
+                        <Link href={service.href}>
+                          <div className='text-sm font-bold leading-none text-gray-800'>
                             {service.title}
                           </div>
                           <p className='line-clamp-2 text-sm leading-snug text-muted-foreground'>
