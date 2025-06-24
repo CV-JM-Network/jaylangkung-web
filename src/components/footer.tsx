@@ -21,7 +21,7 @@ export default function Footer() {
               <h3 className='text-lg font-bold'>JM NETWORK</h3>
             </div>
             <p className='mb-4 text-sm opacity-90'>
-              Transformasi Masa Depan Dimulai Hari Ini
+              We Are Connected
             </p>
             <div className='flex space-x-4'>
               <Link

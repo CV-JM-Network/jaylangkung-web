@@ -54,7 +54,7 @@ export default function Header() {
           />
           <div>
             <h1 className='text-xl font-bold'>JM NETWORK</h1>
-            <p className='text-xs opacity-90'>Transformasi Masa Depan Dimulai Hari Ini</p>
+            <p className='text-xs opacity-90'>We Are Connected</p>
           </div>
         </Link>
 
