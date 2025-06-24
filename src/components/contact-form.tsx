@@ -155,57 +155,65 @@ export default function ContactForm() {
                     />
                   </div>
 
-                  <div>
-                    <Label htmlFor='service' className='mb-2'>
-                      Layanan yang Diminati *
-                    </Label>
-                    <Select
-                      value={formData.service}
-                      onValueChange={(value) =>
-                        setFormData({ ...formData, service: value })
-                      }
-                      required>
-                      <SelectTrigger className='bg-white'>
-                        <SelectValue placeholder='Pilih layanan' />
-                      </SelectTrigger>
-                      <SelectContent className='bg-white'>
-                        <SelectItem value='viachat'>ViaChat - WhatsApp API</SelectItem>
-                        <SelectItem value='brainnet'>
-                          Brainnet - Layanan Internet
-                        </SelectItem>
-                        <SelectItem value='networking'>Layanan Jaringan</SelectItem>
-                        <SelectItem value='consultation'>Konsultasi Gratis</SelectItem>
-                        <SelectItem value='other'>Lainnya</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
+                  <div className='grid gap-4 md:grid-cols-2'>
+                    <div>
+                      <Label htmlFor='service' className='mb-2'>
+                        Layanan yang Diminati *
+                      </Label>
+                      <Select
+                        value={formData.service}
+                        onValueChange={(value) =>
+                          setFormData({ ...formData, service: value })
+                        }
+                        required>
+                        <SelectTrigger className='bg-white'>
+                          <SelectValue placeholder='Pilih layanan' />
+                        </SelectTrigger>
+                        <SelectContent className='bg-white'>
+                          <SelectItem value='viachat'>ViaChat - WhatsApp API</SelectItem>
+                          <SelectItem value='brainnet'>
+                            Brainnet - Layanan Internet
+                          </SelectItem>
+                          <SelectItem value='it-solution'>
+                            Solusi IT - Jaringan & Infrastruktur
+                          </SelectItem>
+                          <SelectItem value='consultation'>Konsultasi Gratis</SelectItem>
+                          <SelectItem value='other'>Lainnya</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
 
-                  <div>
-                    <Label htmlFor='budget' className='mb-2'>
-                      Anggaran Proyek
-                    </Label>
-                    <Select
-                      value={formData.budget}
-                      onValueChange={(value) =>
-                        setFormData({ ...formData, budget: value })
-                      }>
-                      <SelectTrigger className='bg-white'>
-                        <SelectValue placeholder='Pilih rentang anggaran' />
-                      </SelectTrigger>
-                      <SelectContent className='bg-white'>
-                        <SelectItem value='under-10jt'>Di bawah Rp 10.000.000</SelectItem>
-                        <SelectItem value='10jt-50jt'>
-                          Rp 10.000.000 - Rp 50.000.000
-                        </SelectItem>
-                        <SelectItem value='50jt-150jt'>
-                          Rp 50.000.000 - Rp 150.000.000
-                        </SelectItem>
-                        <SelectItem value='150jt-500jt'>
-                          Rp 150.000.000 - Rp 500.000.000
-                        </SelectItem>
-                        <SelectItem value='over-500jt'>Di atas Rp 500.000.000</SelectItem>
-                      </SelectContent>
-                    </Select>
+                    <div>
+                      <Label htmlFor='budget' className='mb-2'>
+                        Anggaran Proyek
+                      </Label>
+                      <Select
+                        value={formData.budget}
+                        onValueChange={(value) =>
+                          setFormData({ ...formData, budget: value })
+                        }>
+                        <SelectTrigger className='bg-white'>
+                          <SelectValue placeholder='Pilih rentang anggaran' />
+                        </SelectTrigger>
+                        <SelectContent className='bg-white'>
+                          <SelectItem value='under-10jt'>
+                            Di bawah Rp 10.000.000
+                          </SelectItem>
+                          <SelectItem value='10jt-50jt'>
+                            Rp 10.000.000 - Rp 50.000.000
+                          </SelectItem>
+                          <SelectItem value='50jt-150jt'>
+                            Rp 50.000.000 - Rp 150.000.000
+                          </SelectItem>
+                          <SelectItem value='150jt-500jt'>
+                            Rp 150.000.000 - Rp 500.000.000
+                          </SelectItem>
+                          <SelectItem value='over-500jt'>
+                            Di atas Rp 500.000.000
+                          </SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </div>
 
                   <div>
