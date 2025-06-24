@@ -2,14 +2,12 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import {
-  Building,
   Calendar,
   ExternalLink,
   Globe,
-  GraduationCap,
   Heart,
-  ShoppingCart,
   Smartphone,
+  UtilityPole,
 } from 'lucide-react';
 
 interface ProjectPortoProps {
@@ -18,104 +16,70 @@ interface ProjectPortoProps {
 
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    category: 'Web Application',
-    description:
-      'Platform e-commerce lengkap dengan sistem inventory, payment gateway, dan dashboard admin',
-    icon: ShoppingCart,
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe API'],
-    features: [
-      'Multi-vendor support',
-      'Real-time inventory',
-      'Payment integration',
-      'Admin dashboard',
-    ],
-    timeline: '3 bulan',
-    client: 'Retail Company',
-    image: 'bg-gradient-to-br from-green-400 to-blue-500',
-  },
-  {
-    title: 'Hospital Management System',
-    category: 'Web & Mobile App',
-    description:
-      'Sistem manajemen rumah sakit dengan aplikasi mobile untuk dokter dan pasien',
-    icon: Heart,
-    technologies: ['Laravel', 'React Native', 'MySQL', 'Firebase'],
-    features: [
-      'Patient records',
-      'Appointment booking',
-      'Telemedicine',
-      'Billing system',
-    ],
-    timeline: '4 bulan',
-    client: 'Healthcare Provider',
-    image: 'bg-gradient-to-br from-red-400 to-pink-500',
-  },
-  {
-    title: 'School Management Portal',
-    category: 'Web Application',
-    description:
-      'Portal manajemen sekolah dengan sistem akademik, keuangan, dan komunikasi',
-    icon: GraduationCap,
-    technologies: ['Vue.js', 'PHP', 'MySQL', 'WebRTC'],
-    features: [
-      'Student portal',
-      'Online classes',
-      'Grade management',
-      'Parent communication',
-    ],
-    timeline: '2.5 bulan',
-    client: 'Educational Institution',
-    image: 'bg-gradient-to-br from-purple-400 to-indigo-500',
-  },
-  {
-    title: 'Corporate Network Infrastructure',
-    category: 'Network Solution',
-    description: 'Instalasi dan konfigurasi jaringan perusahaan dengan 200+ workstations',
-    icon: Building,
-    technologies: ['Cisco Equipment', 'Fiber Optic', 'VLAN', 'Firewall'],
-    features: [
-      'Structured cabling',
-      'WiFi coverage',
-      'Security implementation',
-      '24/7 monitoring',
-    ],
-    timeline: '6 minggu',
-    client: 'Manufacturing Company',
-    image: 'bg-gradient-to-br from-orange-400 to-red-500',
-  },
-  {
-    title: 'Mobile Banking App',
+    title: 'Brainnet Staff App',
     category: 'Mobile Application',
     description:
-      'Aplikasi mobile banking dengan fitur transfer, pembayaran, dan investasi',
+      'Aplikasi mobile untuk manajemen staf Brainnet dengan fitur absensi dan jadwal kerja, dilengkapi dengan notifikasi real-time serta dapat melakukan operasi terkait pelanggan internet.',
     icon: Smartphone,
-    technologies: ['Flutter', 'Firebase', 'Biometric Auth', 'Push Notifications'],
+    technologies: ['Kotlin', 'Firebase', 'REST API', 'Push Notifications'],
     features: [
-      'Secure authentication',
-      'Real-time transactions',
-      'Investment tools',
-      'Bill payments',
+      'Real-time attendance tracking',
+      'Work schedule management',
+      'Customer operations',
+      'Push notifications for updates',
     ],
-    timeline: '5 bulan',
-    client: 'Financial Institution',
-    image: 'bg-gradient-to-br from-blue-400 to-cyan-500',
+    timeline: '3 bulan',
+    client: 'Brainnet ISP',
+    link: 'https://github.com/CV-JM-Network/BrainNet/tree/master/Staff',
+    // image: 'bg-gradient-to-br from-green-400 to-blue-500',
   },
   {
-    title: 'Company Website & CMS',
-    category: 'Web Development',
-    description: 'Website perusahaan dengan CMS custom untuk manajemen konten',
-    icon: Globe,
-    technologies: ['Next.js', 'Strapi CMS', 'PostgreSQL', 'Vercel'],
+    title: 'Korem 083 Health Management System',
+    category: 'Mobile & Web Application',
+    description:
+      'Aplikasi mobile untuk manajemen kesehatan personel Korem 083 dengan fitur rekam medis dan survei kesehatan',
+    icon: Heart,
+    technologies: ['Kotlin', 'Firebase', 'REST API', 'Push Notifications'],
+    features: ['Medical records management', 'Health surveys'],
+    timeline: '4 bulan',
+    client: 'Korem 083 BDJ Malang',
+    link: 'https://github.com/CV-JM-Network/BrainNet/tree/master/Korem',
+    // image: 'bg-gradient-to-br from-red-400 to-pink-500',
+  },
+  {
+    title: 'E-Jartas',
+    category: 'Mobile Application',
+    description:
+      'Aplikasi mobile untuk manajemen jalan dan tiang utilitas dengan fitur QR code scanning untuk laporan kerusakan',
+    icon: UtilityPole,
+    technologies: ['Kotlin', 'Firebase', 'REST API', 'Push Notifications'],
     features: [
-      'SEO optimized',
-      'Content management',
-      'Multi-language',
-      'Analytics integration',
+      'Road and utility pole management',
+      'QR code scanning for damage reports',
+      'Real-time updates',
+      'User-friendly interface',
+    ],
+    timeline: '2.5 bulan',
+    client: 'Brainnet ISP',
+    link: 'https://github.com/CV-JM-Network/E-Jartas',
+    // image: 'bg-gradient-to-br from-purple-400 to-indigo-500',
+  },
+  {
+    title: 'Malang 1 Data',
+    category: 'Web Application',
+    description:
+      'Aplikasi web untuk manajemen data terpadu di Kabupaten Malang, menyediakan dashboard analitik dan laporan interaktif',
+    icon: Globe,
+    technologies: ['PHP', 'Laravel', 'MySQL'],
+    features: [
+      'Integrated data management',
+      'Interactive analytics dashboard',
+      'Customizable reports',
+      'User-friendly interface',
     ],
     timeline: '6 minggu',
-    client: 'Technology Startup',
-    image: 'bg-gradient-to-br from-teal-400 to-green-500',
+    client: 'Diskominfo Kabupaten Malang',
+    // image: 'bg-gradient-to-br from-orange-400 to-red-500',
   },
 ];
 
@@ -183,7 +147,7 @@ export default function ProjectPortfolio({ colors }: ProjectPortoProps) {
                           <div
                             key={featureIndex}
                             className='flex items-center gap-2 text-xs text-muted-foreground'>
-                            <div className='h-1.5 w-1.5 rounded-full bg-blue-500' />
+                            <div className='h-1.5 w-1.5 rounded-full bg-sky-500' />
                             <span>{feature}</span>
                           </div>
                         ))}
@@ -196,10 +160,19 @@ export default function ProjectPortfolio({ colors }: ProjectPortoProps) {
                       <Calendar className='h-3 w-3' />
                       <span>{project.timeline}</span>
                     </div>
-                    <Button size='sm' variant='outline' className='text-xs'>
-                      <ExternalLink className='h-3 w-3 mr-1' />
-                      Detail
-                    </Button>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='flex items-center gap-1 text-sky-500 hover:text-sky-700'
+                        style={{ textDecoration: 'none' }}>
+                        <Button size='sm' variant='outline' className='text-xs'>
+                          <ExternalLink className='h-3 w-3 mr-1' />
+                          Detail
+                        </Button>
+                      </a>
+                    )}
                   </div>
                 </CardContent>
               </Card>
