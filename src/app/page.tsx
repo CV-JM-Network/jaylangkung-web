@@ -1,7 +1,6 @@
 import CallToAction from "@/components/call-to-action"
 import Hero from "@/components/hero"
 import ServicesOverview from "@/components/services-overview"
-import Testimonials from "@/components/testimonials"
 import WhyChooseUs from "@/components/why-choose-us"
 
 export default function HomePage() {
@@ -10,7 +9,7 @@ export default function HomePage() {
       <Hero />
       <ServicesOverview />
       <WhyChooseUs />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CallToAction />
     </main>
   )
