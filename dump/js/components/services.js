@@ -1,6 +1,6 @@
 const services = [
     {
-        name: "VIaChat",
+        name: "ViaChat",
         description: "A powerful WhatsApp API tech provider that enables businesses to integrate WhatsApp messaging into their applications.",
         features: [
             "Seamless integration with existing applications",

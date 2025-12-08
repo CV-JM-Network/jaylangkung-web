@@ -3710,7 +3710,7 @@ input:checked+.slider:before {
     backdrop-filter: blur(10px);
 }
 
-/* VIaChat Page Responsive */
+/* ViaChat Page Responsive */
 @media (max-width: 1024px) {
     .service-hero .container {
         grid-template-columns: 1fr;
@@ -3872,7 +3872,7 @@ input:checked+.slider:before {
     }
 }
 
-/* Additional VIaChat specific animations */
+/* Additional ViaChat specific animations */
 @keyframes whatsappPulse {
 
     0%,
