@@ -1,4 +1,4 @@
-import PricingButton from '@/components/pricing-button';
+import PricingButton from '@/components/services/viachat/pricing-button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check } from 'lucide-react';
