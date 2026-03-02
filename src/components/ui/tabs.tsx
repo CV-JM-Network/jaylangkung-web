@@ -61,4 +61,3 @@ function TabsContent({
 }
 
 export { Tabs, TabsContent, TabsList, TabsTrigger };
-

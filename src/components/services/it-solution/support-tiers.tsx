@@ -186,7 +186,9 @@ export default function SupportTiers({ colors }: SupportTierProps) {
                         tier.popular ? 'bg-sky-500 hover:bg-sky-600' : ''
                       }`}
                       variant={tier.popular ? 'default' : 'outline'}>
-                      <Link href='/contact' className='text-slate-900'>
+                      <Link
+                        href='/contact'
+                        className={tier.popular ? 'text-white' : 'text-slate-900'}>
                         Pilih Paket
                       </Link>
                     </Button>

@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import type React from 'react';
 import { useEffect, useRef, useState } from 'react';
 
 type Direction = 'up' | 'down' | 'left' | 'right';
@@ -19,6 +20,26 @@ const directionStyles: Record<Direction, string> = {
   right: '-translate-x-8',
 };
 
+let sharedObserver: IntersectionObserver | null = null;
+const observerCallbacks = new WeakMap<Element, () => void>();
+
+function getSharedObserver() {
+  if (!sharedObserver) {
+    sharedObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const callback = observerCallbacks.get(entry.target);
+            callback?.();
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+  }
+  return sharedObserver;
+}
+
 export default function ScrollReveal({
   children,
   direction = 'up',
@@ -32,18 +53,20 @@ export default function ScrollReveal({
     const el = ref.current;
     if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.15 },
-    );
+    const observer = getSharedObserver();
+    const handleIntersection = () => {
+      setIsVisible(true);
+      observer.unobserve(el);
+      observerCallbacks.delete(el);
+    };
 
+    observerCallbacks.set(el, handleIntersection);
     observer.observe(el);
-    return () => observer.disconnect();
+
+    return () => {
+      observerCallbacks.delete(el);
+      observer.unobserve(el);
+    };
   }, []);
 
   return (

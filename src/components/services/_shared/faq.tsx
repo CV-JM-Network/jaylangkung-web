@@ -1,9 +1,9 @@
 'use client';
 
+import ScrollReveal from '@/components/scroll-reveal';
 import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
-import ScrollReveal from '@/components/scroll-reveal';
 
 export interface FAQItem {
   question: string;
@@ -87,6 +87,7 @@ export default function FAQ({
               <ScrollReveal key={index} direction='up' delay={index * 100}>
                 <div className='overflow-hidden rounded-lg border bg-white shadow-sm transition-all duration-200 hover:shadow-md'>
                   <button
+                    type='button'
                     className='flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-gray-50'
                     onClick={() => toggleItem(index)}>
                     <h3 className='text-lg font-semibold pr-4'>{item.question}</h3>

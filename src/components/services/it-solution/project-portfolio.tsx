@@ -159,17 +159,17 @@ export default function ProjectPortfolio({ colors }: ProjectPortoProps) {
                         <span>{project.timeline}</span>
                       </div>
                       {project.link && (
-                        <a
-                          href={project.link}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          className='flex items-center gap-1 text-sky-500 hover:text-sky-700'
-                          style={{ textDecoration: 'none' }}>
-                          <Button size='sm' variant='outline' className='text-xs'>
+                        <Button asChild size='sm' variant='outline' className='text-xs'>
+                          <a
+                            href={project.link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='flex items-center gap-1 text-sky-500 hover:text-sky-700'
+                            style={{ textDecoration: 'none' }}>
                             <ExternalLink className='h-3 w-3 mr-1' />
                             Detail
-                          </Button>
-                        </a>
+                          </a>
+                        </Button>
                       )}
                     </div>
                   </CardContent>
