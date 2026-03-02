@@ -8,8 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         viachat: {
           blue: '#3DA8F5', // Approx from blue bubble
           green: '#6AC86E', // Approx from green bubble

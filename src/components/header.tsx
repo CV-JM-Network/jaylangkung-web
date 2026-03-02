@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
@@ -130,50 +130,79 @@ export default function Header() {
               <Menu className='h-5 w-5' />
             </Button>
           </SheetTrigger>
-          <SheetContent side='right' className='w-[300px] sm:w-[400px]'>
-            <nav className='flex flex-col space-y-4'>
+          <SheetContent side='right' className='w-[300px] bg-white sm:w-[400px]'>
+            <SheetTitle className='sr-only'>Menu Navigasi</SheetTitle>
+            <div className='mt-6 flex flex-col space-y-3 font-medium'>
               <Link
                 href='/'
                 className={cn(
-                  'text-lg font-medium transition-colors hover:text-primary',
-                  isActive('/') && 'text-primary',
+                  'group flex items-center rounded-xl px-4 py-3 text-lg transition-all duration-300 animate-in slide-in-from-right-8 fade-in-0 hover:bg-slate-100 hover:text-blue-600',
+                  isActive('/') ? 'bg-sky-50 text-blue-600 shadow-sm' : 'text-slate-700',
                 )}
+                style={{ animationDelay: '100ms', animationFillMode: 'both' }}
                 onClick={() => setIsOpen(false)}>
                 Beranda
               </Link>
+
               <Link
                 href='/about'
                 className={cn(
-                  'text-lg font-medium transition-colors hover:text-primary',
-                  isActive('/about') && 'text-primary',
+                  'group flex items-center rounded-xl px-4 py-3 text-lg transition-all duration-300 animate-in slide-in-from-right-8 fade-in-0 hover:bg-slate-100 hover:text-blue-600',
+                  isActive('/about')
+                    ? 'bg-sky-50 text-blue-600 shadow-sm'
+                    : 'text-slate-700',
                 )}
+                style={{ animationDelay: '150ms', animationFillMode: 'both' }}
                 onClick={() => setIsOpen(false)}>
                 Tentang Kami
               </Link>
-              <div className='space-y-2'>
-                <p className='text-lg font-medium'>Layanan</p>
-                <div className='ml-4 space-y-2'>
-                  {services.map((service) => (
+
+              <div
+                className='animate-in slide-in-from-right-8 fade-in-0 rounded-xl bg-slate-50 p-4'
+                style={{ animationDelay: '200ms', animationFillMode: 'both' }}>
+                <p className='mb-3 text-sm font-semibold tracking-wider text-slate-500 uppercase'>
+                  Layanan
+                </p>
+                <div className='flex flex-col space-y-1'>
+                  {services.map((service, index) => (
                     <Link
                       key={service.title}
                       href={service.href}
-                      className='block text-sm text-muted-foreground hover:text-primary'
+                      className={cn(
+                        'group flex flex-col rounded-lg px-3 py-2 transition-all duration-300 hover:bg-white hover:shadow-sm',
+                        isActive(service.href)
+                          ? 'bg-white shadow-sm ring-1 ring-slate-200'
+                          : '',
+                      )}
                       onClick={() => setIsOpen(false)}>
-                      {service.title}
+                      <span
+                        className={cn(
+                          'text-md font-medium transition-colors group-hover:text-blue-600',
+                          isActive(service.href) ? 'text-blue-600' : 'text-slate-700',
+                        )}>
+                        {service.title}
+                      </span>
+                      <span className='text-xs text-slate-500'>
+                        {service.description}
+                      </span>
                     </Link>
                   ))}
                 </div>
               </div>
+
               <Link
                 href='/contact'
                 className={cn(
-                  'text-lg font-medium transition-colors hover:text-primary',
-                  isActive('/contact') && 'text-primary',
+                  'group flex items-center rounded-xl px-4 py-3 text-lg transition-all duration-300 animate-in slide-in-from-right-8 fade-in-0 hover:bg-slate-100 hover:text-blue-600',
+                  isActive('/contact')
+                    ? 'bg-sky-50 text-blue-600 shadow-sm'
+                    : 'text-slate-700',
                 )}
+                style={{ animationDelay: '250ms', animationFillMode: 'both' }}
                 onClick={() => setIsOpen(false)}>
                 Kontak
               </Link>
-            </nav>
+            </div>
           </SheetContent>
         </Sheet>
       </div>
