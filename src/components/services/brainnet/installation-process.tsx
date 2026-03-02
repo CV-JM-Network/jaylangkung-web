@@ -88,7 +88,7 @@ const installationFeatures = [
   },
   {
     icon: Wifi,
-    title: 'INSTALLASI RAPI',
+    title: 'INSTALASI RAPI',
     description: 'Pemasangan rapi tanpa merusak estetika rumah atau kantor Anda',
   },
 ];

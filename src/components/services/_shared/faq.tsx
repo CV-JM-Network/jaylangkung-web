@@ -76,7 +76,7 @@ export default function FAQ({
             <div
               className='mx-auto mt-4 h-1 w-16'
               style={{
-                background: `linear-gradient(135deg, ${colors.join(', ')}`,
+                background: `linear-gradient(135deg, ${colors.join(', ')})`,
               }}></div>
           </div>
         </ScrollReveal>
