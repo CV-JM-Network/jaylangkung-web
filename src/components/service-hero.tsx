@@ -39,7 +39,7 @@ export default function ServiceHero({
 }: ServiceHeroProps) {
   return (
     <section
-      className='relative overflow-hidden py-20 text-white'
+      className='relative overflow-hidden py-12 lg:py-20 text-white'
       style={{
         background: `linear-gradient(135deg, ${colors.join(', ')})`,
       }}>
@@ -47,7 +47,9 @@ export default function ServiceHero({
         <div className='grid items-center gap-12 lg:grid-cols-2'>
           <div className='space-y-8'>
             <div className='space-y-4'>
-              <h1 className='text-5xl font-bold text-slate-700 lg:text-6xl'>{title}</h1>
+              <h1 className='text-3xl font-bold text-slate-700 sm:text-4xl lg:text-6xl'>
+                {title}
+              </h1>
               <p className='text-xl font-semibold text-slate-700'>{subtitle}</p>
               <p className='text-lg leading-relaxed opacity-90'>{description}</p>
             </div>
@@ -90,7 +92,7 @@ export default function ServiceHero({
           </div>
           <div className='flex justify-center'>
             {badgeImage !== '' && (
-              <img src={badgeImage} alt='Service Hero' width={300} height={300} />
+              <img src={badgeImage} alt={`${title} Logo`} width={300} height={300} />
             )}
           </div>
         </div>

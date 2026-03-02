@@ -53,7 +53,7 @@ export default function ContactForm() {
       `Layanan: ${formData.service}%0D%0A` +
       `Anggaran: ${formData.budget}%0D%0A` +
       `Pesan: ${formData.message}`;
-    const adminEmail = 'admin@example.com';
+    const adminEmail = 'admin@jaylangkung.co.id';
     const mailtoLink = `mailto:${adminEmail}?subject=${encodeURIComponent(
       subject,
     )}&body=${body}`;

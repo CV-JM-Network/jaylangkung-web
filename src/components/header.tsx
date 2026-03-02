@@ -21,17 +21,17 @@ const services = [
   {
     title: 'ViaChat',
     href: '/services/viachat',
-    description: 'WhatsApp API solutions',
+    description: 'Solusi API WhatsApp',
   },
   {
     title: 'Brainnet',
     href: '/services/brainnet',
-    description: 'High-speed internet services',
+    description: 'Layanan internet kecepatan tinggi',
   },
   {
     title: 'IT Solution',
     href: '/services/it-solution',
-    description: 'Comprehensive IT services & solutions',
+    description: 'Layanan & solusi IT komprehensif',
   },
 ];
 
@@ -76,11 +76,12 @@ export default function Header() {
             <NavigationMenuItem>
               <Link href='/about'>
                 <NavigationMenuLink
+                  asChild
                   className={cn(
                     'group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20 focus:outline-none disabled:pointer-events-none disabled:opacity-50',
                     isActive('/about') && 'bg-white/20',
                   )}>
-                  Tentang Kami
+                  <span>Tentang Kami</span>
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
@@ -110,11 +111,12 @@ export default function Header() {
             <NavigationMenuItem>
               <Link href='/contact'>
                 <NavigationMenuLink
+                  asChild
                   className={cn(
                     'group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-white/20 focus:bg-white/20 focus:outline-none disabled:pointer-events-none disabled:opacity-50',
                     isActive('/contact') && 'bg-white/20',
                   )}>
-                  Kontak
+                  <span>Kontak</span>
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>

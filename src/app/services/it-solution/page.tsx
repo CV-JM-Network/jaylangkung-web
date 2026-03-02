@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import CallToAction from '@/components/call-to-action';
 import DevelopmentProcess from '@/components/development-process';
+
+export const metadata: Metadata = {
+  title: 'IT Solution - Solusi IT Komprehensif | JM NETWORK',
+  description:
+    'Layanan IT lengkap dari JM NETWORK: pengembangan aplikasi web/mobile, solusi jaringan, maintenance server, dan konsultasi teknologi.',
+};
 import { FAQITSolution } from '@/components/faq';
 import ITServices from '@/components/it-services';
 import ProjectPortfolio from '@/components/project-portfolio';

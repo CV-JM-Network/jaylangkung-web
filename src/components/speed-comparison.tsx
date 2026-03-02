@@ -83,7 +83,7 @@ export default function SpeedComparison({ colors }: SpeedComparisonProps) {
               <Card
                 key={index}
                 className={`relative transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
-                  isHighlight ? 'shadow-lg scale-105' : ''
+                  isHighlight ? 'shadow-lg' : ''
                 }`}
                 style={isHighlight ? { border: getHighlightBorder() } : {}}>
                 <CardHeader className='text-center'>

@@ -1,8 +1,13 @@
 import ContactForm from '@/components/contact-form';
 import ContactInfo from '@/components/contact-info';
 import PageHero from '@/components/page-hero';
-// import { FAQ } from '@/components/faq';
-// import { MapSection } from '@/components/map-section';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Hubungi Kami - JM NETWORK',
+  description:
+    'Hubungi JM NETWORK untuk konsultasi gratis tentang layanan ViaChat, Brainnet, dan IT Solution. Tim kami siap membantu Anda.',
+};
 
 export default function ContactPage() {
   return (
@@ -14,8 +19,6 @@ export default function ContactPage() {
       />
       <ContactInfo />
       <ContactForm />
-      {/* <FAQ />
-      <MapSection /> */}
     </main>
   );
 }

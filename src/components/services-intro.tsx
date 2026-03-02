@@ -35,21 +35,21 @@ const serviceOverview = [
     title: 'ViaChat',
     description: 'Solusi API WhatsApp Business untuk komunikasi pelanggan yang efektif',
     color: 'from-green-500 to-emerald-500',
-    badge: 'Communication',
+    badge: 'Komunikasi',
   },
   {
     icon: Wifi,
-    title: 'Brainet',
+    title: 'Brainnet',
     description: 'Layanan internet fiber premium dengan kecepatan hingga 10 Gbps',
     color: 'from-blue-500 to-cyan-500',
-    badge: 'Connectivity',
+    badge: 'Konektivitas',
   },
   {
     icon: Network,
     title: 'IT Solution',
     description: 'Solusi IT komprehensif dari pengembangan aplikasi hingga infrastruktur',
     color: 'from-purple-500 to-pink-500',
-    badge: 'Technology',
+    badge: 'Teknologi',
   },
 ];
 
@@ -147,19 +147,19 @@ export default function ServicesIntro() {
 
           <div className='mt-8 grid gap-6 md:grid-cols-3'>
             <div className='text-center'>
-              <div className='mb-3 text-2xl font-bold'>Innovation</div>
+              <div className='mb-3 text-2xl font-bold'>Inovasi</div>
               <p className='text-sm text-blue-100'>
                 Selalu menggunakan teknologi terbaru dan terdepan
               </p>
             </div>
             <div className='text-center'>
-              <div className='mb-3 text-2xl font-bold'>Quality</div>
+              <div className='mb-3 text-2xl font-bold'>Kualitas</div>
               <p className='text-sm text-blue-100'>
                 Standar kualitas tinggi dalam setiap deliverable
               </p>
             </div>
             <div className='text-center'>
-              <div className='mb-3 text-2xl font-bold'>Partnership</div>
+              <div className='mb-3 text-2xl font-bold'>Kemitraan</div>
               <p className='text-sm text-blue-100'>
                 Membangun hubungan jangka panjang dengan klien
               </p>

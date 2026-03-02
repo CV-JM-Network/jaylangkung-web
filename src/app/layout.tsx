@@ -1,36 +1,26 @@
-import Footer from "@/components/footer"
-import Header from "@/components/header"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import type React from "react"
-import "./globals.css"
-// import { ThemeProvider } from "@/components/theme-provider"
+import Footer from '@/components/footer';
+import Header from '@/components/header';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import type React from 'react';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "JM NETWORK - Layanan Komunikasi & Jaringan Inovatif",
+  title: 'JM NETWORK - Layanan Komunikasi & Jaringan Inovatif',
   description:
-    "Startup teknologi terkemuka yang menyediakan solusi API WhatsApp mutakhir, layanan internet kecepatan tinggi, dan solusi jaringan perusahaan",
-  icons: {
-    icon: "/favicon.ico",
-  },
-}
+    'Startup teknologi terkemuka yang menyediakan solusi API WhatsApp mutakhir, layanan internet kecepatan tinggi, dan solusi jaringan perusahaan',
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id">
+    <html lang='id'>
       <body className={inter.className}>
-        {/* <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange> */}
-          <Header />
-          {children}
-          <Footer />
-        {/* </ThemeProvider> */}
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
-  )
+  );
 }

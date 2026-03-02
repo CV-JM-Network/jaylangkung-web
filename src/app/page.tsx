@@ -1,7 +1,7 @@
-import CallToAction from "@/components/call-to-action"
-import Hero from "@/components/hero"
-import ServicesOverview from "@/components/services-overview"
-import WhyChooseUs from "@/components/why-choose-us"
+import CallToAction from '@/components/call-to-action';
+import Hero from '@/components/hero';
+import ServicesOverview from '@/components/services-overview';
+import WhyChooseUs from '@/components/why-choose-us';
 
 export default function HomePage() {
   return (
@@ -9,8 +9,7 @@ export default function HomePage() {
       <Hero />
       <ServicesOverview />
       <WhyChooseUs />
-      {/* <Testimonials /> */}
       <CallToAction />
     </main>
-  )
+  );
 }

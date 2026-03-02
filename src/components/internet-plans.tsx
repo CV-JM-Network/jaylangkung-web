@@ -287,7 +287,7 @@ export default function InternetPlans({ colors }: InternetPlansProps) {
                         <div key={index} className='snap-center flex-shrink-0 w-80'>
                           <Card
                             className={`relative transition-all duration-300 bg-white hover:-translate-y-2 hover:shadow-xl ${
-                              popular ? 'shadow-lg scale-105' : ''
+                              popular ? 'shadow-lg' : ''
                             }`}
                             style={popular ? { border: getHighlightBorder() } : {}}>
                             <CardHeader className='text-center'>
@@ -383,6 +383,9 @@ export default function InternetPlans({ colors }: InternetPlansProps) {
                   <ChevronRight className='h-6 w-6 text-gray-600' />
                 </button>
               </div>
+              <p className='text-center text-sm text-muted-foreground mt-2 md:hidden'>
+                Geser untuk melihat paket lainnya →
+              </p>
             </TabsContent>
 
             <TabsContent

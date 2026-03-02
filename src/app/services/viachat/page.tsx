@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import CallToAction from '@/components/call-to-action';
 import { FAQViaChat } from '@/components/faq';
+
+export const metadata: Metadata = {
+  title: 'ViaChat - Solusi API WhatsApp Business | JM NETWORK',
+  description:
+    'Transformasikan komunikasi pelanggan Anda dengan ViaChat API WhatsApp Business. Pesan real-time, chatbot AI, dukungan media lengkap.',
+};
 import FeaturesGrid, { type Feature } from '@/components/features-grid';
 import PricingSection from '@/components/pricing-section';
 import ProcessSteps, { ProcessStep } from '@/components/process-steps';

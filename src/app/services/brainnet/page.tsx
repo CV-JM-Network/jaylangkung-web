@@ -1,5 +1,12 @@
+import type { Metadata } from 'next';
 import CallToAction from '@/components/call-to-action';
 import { FAQBrainnet } from '@/components/faq';
+
+export const metadata: Metadata = {
+  title: 'Brainnet - Layanan Internet Fiber-Optic Premium | JM NETWORK',
+  description:
+    'Rasakan internet fiber-optic super cepat hingga 1 Gbps dengan Brainnet. Paket rumah dan enterprise, 99.9% uptime SLA, dukungan 24/7.',
+};
 import FeaturesGrid from '@/components/features-grid';
 import InstallationProcess from '@/components/installation-process';
 import InternetPlans from '@/components/internet-plans';

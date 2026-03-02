@@ -40,7 +40,7 @@ export default function PricingSection({
             style={{ background: getGradientBg() }}></div>
         </div>
 
-        <div className='mt-16 grid gap-8 lg:grid-cols-3'>
+        <div className='mt-16 grid gap-12 lg:gap-8 lg:grid-cols-3'>
           {plans.map((plan, index) => {
             const { name, price, period, description, features, popular } = plan;
             return (

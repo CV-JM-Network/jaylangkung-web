@@ -4,11 +4,11 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className='relative overflow-hidden bg-gradient-to-br from-blue-600 via-teal-600 to-blue-800 py-20 text-white'>
+    <section className='relative overflow-hidden bg-gradient-to-br from-blue-600 via-teal-600 to-blue-800 py-12 sm:py-20 text-white'>
       <div className='container mx-auto px-4'>
         <div className='grid items-center gap-8 lg:grid-cols-2'>
           <div className='space-y-6'>
-            <h1 className='text-4xl font-bold leading-tight lg:text-6xl'>
+            <h1 className='text-3xl font-bold leading-tight sm:text-4xl lg:text-6xl'>
               Transformasi Masa Depan Dimulai Hari Ini
             </h1>
             <p className='text-lg opacity-90 lg:text-xl'>
@@ -30,19 +30,17 @@ export default function Hero() {
             </div>
           </div>
           <div className='flex justify-center'>
-            <div className=''>
-              <img
-                src='/assets/logo.png'
-                alt='Hero Image'
-                width={300}
-                height={400}
-                className='max-w-full h-auto'
-              />
-            </div>
+            <img
+              src='/assets/logo.png'
+              alt='JM NETWORK Logo'
+              width={300}
+              height={400}
+              className='max-w-full h-auto'
+            />
           </div>
         </div>
 
-        <div className='mt-16 grid grid-cols-1 gap-8 sm:grid-cols-4'>
+        <div className='mt-12 sm:mt-16 grid grid-cols-2 gap-6 sm:gap-8 sm:grid-cols-4'>
           <div className='text-center'>
             <h3 className='text-3xl font-bold text-white'>100+</h3>
             <p className='opacity-90'>Klien Puas</p>

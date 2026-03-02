@@ -93,15 +93,7 @@ export default function ContactInfo() {
                 {card.href && card.href !== '' && card.title !== 'Jam Kerja' ? (
                   <a
                     href={card.href}
-                    className={`text-sm font-medium ${
-                      card.title === 'Jam Kerja'
-                        ? card.status
-                          ? 'text-green-600'
-                          : 'text-red-600'
-                        : card.status
-                        ? 'text-green-600'
-                        : 'text-blue-600 hover:underline cursor-pointer'
-                    }`}
+                    className='text-sm font-medium text-blue-600 hover:underline cursor-pointer'
                     target='_blank'
                     rel='noopener noreferrer'>
                     {card.action}
@@ -113,9 +105,7 @@ export default function ContactInfo() {
                         ? card.status
                           ? 'text-green-600'
                           : 'text-red-600'
-                        : card.status
-                        ? 'text-green-600'
-                        : 'text-blue-600 hover:underline cursor-pointer'
+                        : 'text-blue-600'
                     }`}>
                     {card.action}
                   </span>
