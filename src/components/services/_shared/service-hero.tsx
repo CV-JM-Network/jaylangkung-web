@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import ScrollReveal from '@/components/scroll-reveal';
 
 interface ServiceHeroProps {
   badgeImage: string;
@@ -45,56 +46,60 @@ export default function ServiceHero({
       }}>
       <div className='container mx-auto px-4'>
         <div className='grid items-center gap-12 lg:grid-cols-2'>
-          <div className='space-y-8'>
-            <div className='space-y-4'>
-              <h1 className='text-3xl font-bold text-slate-700 sm:text-4xl lg:text-6xl'>
-                {title}
-              </h1>
-              <p className='text-xl font-semibold text-slate-700'>{subtitle}</p>
-              <p className='text-lg leading-relaxed opacity-90'>{description}</p>
-            </div>
-            <div className='grid grid-cols-2 gap-6 lg:grid-cols-4'>
-              {stats.map((stat, index) => (
-                <div key={index} className='text-center'>
-                  <div className='text-2xl font-bold text-white lg:text-3xl'>
-                    {stat.value}
+          <ScrollReveal direction='up'>
+            <div className='space-y-8'>
+              <div className='space-y-4'>
+                <h1 className='text-3xl font-bold text-slate-700 sm:text-4xl lg:text-6xl'>
+                  {title}
+                </h1>
+                <p className='text-xl font-semibold text-slate-700'>{subtitle}</p>
+                <p className='text-lg leading-relaxed opacity-90'>{description}</p>
+              </div>
+              <div className='grid grid-cols-2 gap-6 lg:grid-cols-4'>
+                {stats.map((stat, index) => (
+                  <div key={index} className='text-center'>
+                    <div className='text-2xl font-bold text-white lg:text-3xl'>
+                      {stat.value}
+                    </div>
+                    <div className='text-sm opacity-90'>{stat.label}</div>
                   </div>
-                  <div className='text-sm opacity-90'>{stat.label}</div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className='flex flex-col gap-4 sm:flex-row'>
+                <Button asChild size='lg' className='bg-red-500 hover:bg-red-600'>
+                  <Link href={primaryAction.href}>{primaryAction.text}</Link>
+                </Button>
+                <Button
+                  asChild
+                  size='lg'
+                  variant='outline'
+                  className='border-white text-white hover:bg-white hover:text-blue-600'>
+                  <Link href={secondaryAction.href}>{secondaryAction.text}</Link>
+                </Button>
+              </div>
+              <div className='text-sm opacity-75'>
+                {breadcrumb.map((item, index) => (
+                  <span key={index}>
+                    {item.href ? (
+                      <Link href={item.href} className='hover:underline'>
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <span>{item.label}</span>
+                    )}
+                    {index < breadcrumb.length - 1 && <span className='mx-2'>/</span>}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className='flex flex-col gap-4 sm:flex-row'>
-              <Button asChild size='lg' className='bg-red-500 hover:bg-red-600'>
-                <Link href={primaryAction.href}>{primaryAction.text}</Link>
-              </Button>
-              <Button
-                asChild
-                size='lg'
-                variant='outline'
-                className='border-white text-white hover:bg-white hover:text-blue-600'>
-                <Link href={secondaryAction.href}>{secondaryAction.text}</Link>
-              </Button>
+          </ScrollReveal>
+          <ScrollReveal direction='right' delay={200}>
+            <div className='flex justify-center'>
+              {badgeImage !== '' && (
+                <img src={badgeImage} alt={`${title} Logo`} width={300} height={300} />
+              )}
             </div>
-            <div className='text-sm opacity-75'>
-              {breadcrumb.map((item, index) => (
-                <span key={index}>
-                  {item.href ? (
-                    <Link href={item.href} className='hover:underline'>
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <span>{item.label}</span>
-                  )}
-                  {index < breadcrumb.length - 1 && <span className='mx-2'>/</span>}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className='flex justify-center'>
-            {badgeImage !== '' && (
-              <img src={badgeImage} alt={`${title} Logo`} width={300} height={300} />
-            )}
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

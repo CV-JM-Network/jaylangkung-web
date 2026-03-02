@@ -3,6 +3,7 @@
 import { cn } from '@/lib/utils';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import ScrollReveal from '@/components/scroll-reveal';
 
 export interface FAQItem {
   question: string;
@@ -68,43 +69,49 @@ export default function FAQ({
   return (
     <section className={cn('py-20', className)}>
       <div className='container mx-auto px-4'>
-        <div className='text-center'>
-          <h2 className='text-3xl font-bold lg:text-4xl'>{title}</h2>
-          <p className='mt-4 text-lg text-muted-foreground'>{subtitle}</p>
-          <div
-            className='mx-auto mt-4 h-1 w-16'
-            style={{ background: `linear-gradient(135deg, ${colors.join(', ')}` }}></div>
-        </div>
+        <ScrollReveal direction='up'>
+          <div className='text-center'>
+            <h2 className='text-3xl font-bold lg:text-4xl'>{title}</h2>
+            <p className='mt-4 text-lg text-muted-foreground'>{subtitle}</p>
+            <div
+              className='mx-auto mt-4 h-1 w-16'
+              style={{
+                background: `linear-gradient(135deg, ${colors.join(', ')}`,
+              }}></div>
+          </div>
+        </ScrollReveal>
 
         <div className='mx-auto mt-16 max-w-4xl'>
           <div className='space-y-4'>
             {questions.map((item, index) => (
-              <div
-                key={index}
-                className='overflow-hidden rounded-lg border bg-white shadow-sm transition-all duration-200 hover:shadow-md'>
-                <button
-                  className='flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-gray-50'
-                  onClick={() => toggleItem(index)}>
-                  <h3 className='text-lg font-semibold pr-4'>{item.question}</h3>
-                  <ChevronDown
+              <ScrollReveal key={index} direction='up' delay={index * 100}>
+                <div className='overflow-hidden rounded-lg border bg-white shadow-sm transition-all duration-200 hover:shadow-md'>
+                  <button
+                    className='flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-gray-50'
+                    onClick={() => toggleItem(index)}>
+                    <h3 className='text-lg font-semibold pr-4'>{item.question}</h3>
+                    <ChevronDown
+                      className={cn(
+                        'h-5 w-5 text-gray-500 transition-transform duration-200 flex-shrink-0',
+                        openItems.includes(index) && 'rotate-180',
+                      )}
+                    />
+                  </button>
+                  <div
                     className={cn(
-                      'h-5 w-5 text-gray-500 transition-transform duration-200 flex-shrink-0',
-                      openItems.includes(index) && 'rotate-180',
-                    )}
-                  />
-                </button>
-                <div
-                  className={cn(
-                    'overflow-hidden transition-all duration-200 ease-in-out',
-                    openItems.includes(index)
-                      ? 'max-h-96 opacity-100'
-                      : 'max-h-0 opacity-0',
-                  )}>
-                  <div className='border-t bg-gray-50 p-6'>
-                    <p className='leading-relaxed text-muted-foreground'>{item.answer}</p>
+                      'overflow-hidden transition-all duration-200 ease-in-out',
+                      openItems.includes(index)
+                        ? 'max-h-96 opacity-100'
+                        : 'max-h-0 opacity-0',
+                    )}>
+                    <div className='border-t bg-gray-50 p-6'>
+                      <p className='leading-relaxed text-muted-foreground'>
+                        {item.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

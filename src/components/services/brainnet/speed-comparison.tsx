@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Check, Phone, Tv, X, Zap } from 'lucide-react';
+import ScrollReveal from '@/components/scroll-reveal';
 
 interface SpeedComparisonProps {
   colors: string[];
@@ -64,121 +65,126 @@ export default function SpeedComparison({ colors }: SpeedComparisonProps) {
   return (
     <section className='py-20'>
       <div className='container mx-auto px-4'>
-        <div className='text-center'>
-          <h2 className='text-3xl font-bold lg:text-4xl'>Perbandingan Kecepatan</h2>
-          <p className='mt-4 text-lg text-muted-foreground'>
-            Lihat bagaimana internet fiber-optic Brainnet dibandingkan dengan jenis
-            koneksi lainnya
-          </p>
-          <div
-            className='mx-auto mt-4 h-1 w-16'
-            style={{ background: getGradientBg() }}></div>
-        </div>
+        <ScrollReveal direction='up'>
+          <div className='text-center'>
+            <h2 className='text-3xl font-bold lg:text-4xl'>Perbandingan Kecepatan</h2>
+            <p className='mt-4 text-lg text-muted-foreground'>
+              Lihat bagaimana internet fiber-optic Brainnet dibandingkan dengan jenis
+              koneksi lainnya
+            </p>
+            <div
+              className='mx-auto mt-4 h-1 w-16'
+              style={{ background: getGradientBg() }}></div>
+          </div>
+        </ScrollReveal>
 
         <div className='mt-16 grid gap-8 lg:grid-cols-3'>
           {comparisons.map((comparison, index) => {
             const ComparisonIcon = comparison.icon;
             const isHighlight = comparison.highlight;
             return (
-              <Card
-                key={index}
-                className={`relative transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
-                  isHighlight ? 'shadow-lg' : ''
-                }`}
-                style={isHighlight ? { border: getHighlightBorder() } : {}}>
-                <CardHeader className='text-center'>
-                  <div className='mb-4 flex justify-center'>
-                    <div
-                      className={`flex h-16 w-16 items-center justify-center rounded-full ${
-                        isHighlight ? 'text-white' : 'text-gray-600'
-                      }`}
-                      style={getIconWrapperStyle(isHighlight)}>
-                      <ComparisonIcon className='h-8 w-8' />
+              <ScrollReveal key={index} direction='up' delay={index * 150}>
+                <Card
+                  className={`relative h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
+                    isHighlight ? 'shadow-lg' : ''
+                  }`}
+                  style={isHighlight ? { border: getHighlightBorder() } : {}}>
+                  <CardHeader className='text-center'>
+                    <div className='mb-4 flex justify-center'>
+                      <div
+                        className={`flex h-16 w-16 items-center justify-center rounded-full ${
+                          isHighlight ? 'text-white' : 'text-gray-600'
+                        }`}
+                        style={getIconWrapperStyle(isHighlight)}>
+                        <ComparisonIcon className='h-8 w-8' />
+                      </div>
                     </div>
-                  </div>
-                  <CardTitle className='text-xl'>{comparison.title}</CardTitle>
-                  <Badge variant={comparison.badge.variant}>
-                    {comparison.badge.text}
-                  </Badge>
-                </CardHeader>
+                    <CardTitle className='text-xl'>{comparison.title}</CardTitle>
+                    <Badge variant={comparison.badge.variant}>
+                      {comparison.badge.text}
+                    </Badge>
+                  </CardHeader>
 
-                <CardContent className='space-y-6'>
-                  <div className='space-y-4'>
-                    {/* Download Speed */}
+                  <CardContent className='space-y-6'>
+                    <div className='space-y-4'>
+                      {/* Download Speed */}
+                      <div className='space-y-2'>
+                        <div className='flex justify-between text-sm'>
+                          <span>Kecepatan Download</span>
+                          <span className='font-medium'>
+                            {comparison.downloadSpeed.value}
+                          </span>
+                        </div>
+                        <div className='h-2 rounded-full bg-gray-200'>
+                          <div
+                            className={`h-2 rounded-full transition-all duration-1000 ${getBarColor(
+                              isHighlight,
+                            )}`}
+                            style={{ width: `${comparison.downloadSpeed.percentage}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Upload Speed */}
+                      <div className='space-y-2'>
+                        <div className='flex justify-between text-sm'>
+                          <span>Kecepatan Upload</span>
+                          <span className='font-medium'>
+                            {comparison.uploadSpeed.value}
+                          </span>
+                        </div>
+                        <div className='h-2 rounded-full bg-gray-200'>
+                          <div
+                            className={`h-2 rounded-full transition-all duration-1000 ${getBarColor(
+                              isHighlight,
+                            )}`}
+                            style={{ width: `${comparison.uploadSpeed.percentage}%` }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Latency */}
+                      <div className='space-y-2'>
+                        <div className='flex justify-between text-sm'>
+                          <span>Latensi</span>
+                          <span className='font-medium'>{comparison.latency.value}</span>
+                        </div>
+                        <div className='h-2 rounded-full bg-gray-200'>
+                          <div
+                            className={`h-2 rounded-full transition-all duration-1000 ${getBarColor(
+                              isHighlight,
+                            )}`}
+                            style={{ width: `${comparison.latency.percentage}%` }}
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Features */}
                     <div className='space-y-2'>
-                      <div className='flex justify-between text-sm'>
-                        <span>Kecepatan Download</span>
-                        <span className='font-medium'>
-                          {comparison.downloadSpeed.value}
-                        </span>
-                      </div>
-                      <div className='h-2 rounded-full bg-gray-200'>
+                      {comparison.features.map((feature, featureIndex) => (
                         <div
-                          className={`h-2 rounded-full transition-all duration-1000 ${getBarColor(
-                            isHighlight,
-                          )}`}
-                          style={{ width: `${comparison.downloadSpeed.percentage}%` }}
-                        />
-                      </div>
+                          key={featureIndex}
+                          className='flex items-center gap-2 text-sm'>
+                          {feature.available ? (
+                            <Check className='h-4 w-4 text-green-500' />
+                          ) : (
+                            <X className='h-4 w-4 text-red-500' />
+                          )}
+                          <span
+                            className={
+                              feature.available
+                                ? 'text-foreground'
+                                : 'text-muted-foreground'
+                            }>
+                            {feature.text}
+                          </span>
+                        </div>
+                      ))}
                     </div>
-
-                    {/* Upload Speed */}
-                    <div className='space-y-2'>
-                      <div className='flex justify-between text-sm'>
-                        <span>Kecepatan Upload</span>
-                        <span className='font-medium'>
-                          {comparison.uploadSpeed.value}
-                        </span>
-                      </div>
-                      <div className='h-2 rounded-full bg-gray-200'>
-                        <div
-                          className={`h-2 rounded-full transition-all duration-1000 ${getBarColor(
-                            isHighlight,
-                          )}`}
-                          style={{ width: `${comparison.uploadSpeed.percentage}%` }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Latency */}
-                    <div className='space-y-2'>
-                      <div className='flex justify-between text-sm'>
-                        <span>Latensi</span>
-                        <span className='font-medium'>{comparison.latency.value}</span>
-                      </div>
-                      <div className='h-2 rounded-full bg-gray-200'>
-                        <div
-                          className={`h-2 rounded-full transition-all duration-1000 ${getBarColor(
-                            isHighlight,
-                          )}`}
-                          style={{ width: `${comparison.latency.percentage}%` }}
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className='space-y-2'>
-                    {comparison.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className='flex items-center gap-2 text-sm'>
-                        {feature.available ? (
-                          <Check className='h-4 w-4 text-green-500' />
-                        ) : (
-                          <X className='h-4 w-4 text-red-500' />
-                        )}
-                        <span
-                          className={
-                            feature.available
-                              ? 'text-foreground'
-                              : 'text-muted-foreground'
-                          }>
-                          {feature.text}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             );
           })}
         </div>

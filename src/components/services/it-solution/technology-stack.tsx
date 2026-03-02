@@ -12,6 +12,7 @@ import {
   Smartphone,
   Zap,
 } from 'lucide-react';
+import ScrollReveal from '@/components/scroll-reveal';
 
 interface TecStackProps {
   colors: string[];
@@ -133,29 +134,33 @@ export default function TechnologyStack({ colors }: TecStackProps) {
   return (
     <section className='py-10'>
       <div className='container mx-auto px-4'>
-        <div className='text-center'>
-          <h2 className='text-3xl font-bold lg:text-4xl'>Tech Stack Kami</h2>
-          <p className='mt-4 text-lg text-muted-foreground'>
-            Teknologi modern dan proven yang kami gunakan untuk membangun solusi terbaik
-          </p>
-          <div
-            className='mx-auto mt-4 h-1 w-16'
-            style={{ background: getGradientBg() }}></div>
-        </div>
+        <ScrollReveal direction='up'>
+          <div className='text-center'>
+            <h2 className='text-3xl font-bold lg:text-4xl'>Tech Stack Kami</h2>
+            <p className='mt-4 text-lg text-muted-foreground'>
+              Teknologi modern dan proven yang kami gunakan untuk membangun solusi terbaik
+            </p>
+            <div
+              className='mx-auto mt-4 h-1 w-16'
+              style={{ background: getGradientBg() }}></div>
+          </div>
+        </ScrollReveal>
 
         {/* Stats Section */}
-        <div className='mt-12 grid grid-cols-2 gap-6 rounded-2xl bg-slate-100 p-8 lg:grid-cols-4'>
-          {stats.map((stat, index) => (
-            <div key={index} className='text-center'>
-              <div className='text-3xl font-bold text-sky-600 lg:text-4xl'>
-                {stat.number}
+        <ScrollReveal direction='up' delay={100}>
+          <div className='mt-12 grid grid-cols-2 gap-6 rounded-2xl bg-slate-100 p-8 lg:grid-cols-4'>
+            {stats.map((stat, index) => (
+              <div key={index} className='text-center'>
+                <div className='text-3xl font-bold text-sky-600 lg:text-4xl'>
+                  {stat.number}
+                </div>
+                <div className='mt-2 text-sm font-medium text-muted-foreground'>
+                  {stat.label}
+                </div>
               </div>
-              <div className='mt-2 text-sm font-medium text-muted-foreground'>
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Technology Categories */}
         <div className='mt-16 space-y-12'>
@@ -163,36 +168,38 @@ export default function TechnologyStack({ colors }: TecStackProps) {
             const CategoryIcon = category.icon;
             return (
               <div key={categoryIndex} className='space-y-6'>
-                <div className='flex items-center gap-4'>
-                  <div
-                    className={`flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r ${category.color} text-white`}>
-                    <CategoryIcon className='h-6 w-6' />
+                <ScrollReveal direction='left' delay={100}>
+                  <div className='flex items-center gap-4'>
+                    <div
+                      className={`flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r ${category.color} text-white`}>
+                      <CategoryIcon className='h-6 w-6' />
+                    </div>
+                    <h3 className='text-2xl font-bold'>{category.title}</h3>
                   </div>
-                  <h3 className='text-2xl font-bold'>{category.title}</h3>
-                </div>
+                </ScrollReveal>
 
                 <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3'>
                   {category.technologies.map((tech, techIndex) => (
-                    <Card
-                      key={techIndex}
-                      className='group transition-all duration-300 hover:shadow-lg'>
-                      <CardHeader className='pb-3'>
-                        <div className='flex items-center justify-between'>
-                          <CardTitle className='text-lg'>{tech.name}</CardTitle>
-                          <Badge
-                            className={
-                              levelColors[tech.level as keyof typeof levelColors]
-                            }>
-                            {tech.level}
-                          </Badge>
-                        </div>
-                      </CardHeader>
-                      <CardContent className='pt-0'>
-                        <p className='text-sm text-muted-foreground'>
-                          {tech.description}
-                        </p>
-                      </CardContent>
-                    </Card>
+                    <ScrollReveal key={techIndex} direction='up' delay={techIndex * 80}>
+                      <Card className='group h-full transition-all duration-300 hover:shadow-lg'>
+                        <CardHeader className='pb-3'>
+                          <div className='flex items-center justify-between'>
+                            <CardTitle className='text-lg'>{tech.name}</CardTitle>
+                            <Badge
+                              className={
+                                levelColors[tech.level as keyof typeof levelColors]
+                              }>
+                              {tech.level}
+                            </Badge>
+                          </div>
+                        </CardHeader>
+                        <CardContent className='pt-0'>
+                          <p className='text-sm text-muted-foreground'>
+                            {tech.description}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </ScrollReveal>
                   ))}
                 </div>
               </div>
@@ -201,58 +208,60 @@ export default function TechnologyStack({ colors }: TecStackProps) {
         </div>
 
         {/* Additional Tools & Services */}
-        <div
-          className='mt-16 rounded-2xl p-8 text-white'
-          style={{ background: getGradientBg() }}>
-          <div className='text-center'>
-            <h3 className='text-2xl font-bold'>Tools & Development Environment</h3>
-            <p className='mt-2 text-gray-100'>
-              Professional tools yang kami gunakan untuk development dan deployment
-            </p>
+        <ScrollReveal direction='up' delay={200}>
+          <div
+            className='mt-16 rounded-2xl p-8 text-white'
+            style={{ background: getGradientBg() }}>
+            <div className='text-center'>
+              <h3 className='text-2xl font-bold'>Tools & Development Environment</h3>
+              <p className='mt-2 text-gray-100'>
+                Professional tools yang kami gunakan untuk development dan deployment
+              </p>
+            </div>
+
+            <div className='mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
+              <div className='text-center'>
+                <div className='mb-3 flex justify-center'>
+                  <div className='rounded-full bg-white/20 p-3'>
+                    <Code className='h-6 w-6' />
+                  </div>
+                </div>
+                <h4 className='font-semibold'>Development</h4>
+                <p className='text-sm text-gray-100'>VS Code, Git, GitHub</p>
+              </div>
+
+              <div className='text-center'>
+                <div className='mb-3 flex justify-center'>
+                  <div className='rounded-full bg-white/20 p-3'>
+                    <Palette className='h-6 w-6' />
+                  </div>
+                </div>
+                <h4 className='font-semibold'>Design</h4>
+                <p className='text-sm text-gray-100'>Figma, Adobe XD</p>
+              </div>
+
+              <div className='text-center'>
+                <div className='mb-3 flex justify-center'>
+                  <div className='rounded-full bg-white/20 p-3'>
+                    <Zap className='h-6 w-6' />
+                  </div>
+                </div>
+                <h4 className='font-semibold'>Testing</h4>
+                <p className='text-sm text-gray-100'>Postman</p>
+              </div>
+
+              <div className='text-center'>
+                <div className='mb-3 flex justify-center'>
+                  <div className='rounded-full bg-white/20 p-3'>
+                    <Settings className='h-6 w-6' />
+                  </div>
+                </div>
+                <h4 className='font-semibold'>Monitoring</h4>
+                <p className='text-sm text-gray-100'>Grafana, InfluxDB</p>
+              </div>
+            </div>
           </div>
-
-          <div className='mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
-            <div className='text-center'>
-              <div className='mb-3 flex justify-center'>
-                <div className='rounded-full bg-white/20 p-3'>
-                  <Code className='h-6 w-6' />
-                </div>
-              </div>
-              <h4 className='font-semibold'>Development</h4>
-              <p className='text-sm text-gray-100'>VS Code, Git, GitHub</p>
-            </div>
-
-            <div className='text-center'>
-              <div className='mb-3 flex justify-center'>
-                <div className='rounded-full bg-white/20 p-3'>
-                  <Palette className='h-6 w-6' />
-                </div>
-              </div>
-              <h4 className='font-semibold'>Design</h4>
-              <p className='text-sm text-gray-100'>Figma, Adobe XD</p>
-            </div>
-
-            <div className='text-center'>
-              <div className='mb-3 flex justify-center'>
-                <div className='rounded-full bg-white/20 p-3'>
-                  <Zap className='h-6 w-6' />
-                </div>
-              </div>
-              <h4 className='font-semibold'>Testing</h4>
-              <p className='text-sm text-gray-100'>Postman</p>
-            </div>
-
-            <div className='text-center'>
-              <div className='mb-3 flex justify-center'>
-                <div className='rounded-full bg-white/20 p-3'>
-                  <Settings className='h-6 w-6' />
-                </div>
-              </div>
-              <h4 className='font-semibold'>Monitoring</h4>
-              <p className='text-sm text-gray-100'>Grafana, InfluxDB</p>
-            </div>
-          </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

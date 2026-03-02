@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
+import ScrollReveal from '@/components/scroll-reveal';
 
 interface InternetPlansProps {
   colors: string[];
@@ -191,15 +192,17 @@ export default function InternetPlans({ colors }: InternetPlansProps) {
   return (
     <section className='bg-gray-100 py-20' id='pricing'>
       <div className='container mx-auto px-4'>
-        <div className='text-center'>
-          <h2 className='text-3xl font-bold lg:text-4xl'>Pilih Paket Sempurna Anda</h2>
-          <p className='mt-4 text-lg text-muted-foreground'>
-            Paket internet fleksibel yang dirancang untuk setiap kebutuhan dan anggaran
-          </p>
-          <div
-            className='mx-auto mt-4 h-1 w-16'
-            style={{ background: getGradientBg() }}></div>
-        </div>
+        <ScrollReveal direction='up'>
+          <div className='text-center'>
+            <h2 className='text-3xl font-bold lg:text-4xl'>Pilih Paket Sempurna Anda</h2>
+            <p className='mt-4 text-lg text-muted-foreground'>
+              Paket internet fleksibel yang dirancang untuk setiap kebutuhan dan anggaran
+            </p>
+            <div
+              className='mx-auto mt-4 h-1 w-16'
+              style={{ background: getGradientBg() }}></div>
+          </div>
+        </ScrollReveal>
 
         <div className='mt-8'>
           <Tabs value={activeTab} onValueChange={setActiveTab} className='w-full'>
@@ -404,52 +407,59 @@ export default function InternetPlans({ colors }: InternetPlansProps) {
                   {enterpriseFeatures.map((feature, index) => {
                     const FeatureIcon = feature.icon;
                     return (
-                      <Card
-                        key={index}
-                        className='transition-all duration-300 bg-white hover:-translate-y-1 hover:shadow-lg'>
-                        <CardContent className='p-6 text-center'>
-                          <div className='mb-4 flex justify-center'>
-                            <div
-                              className='flex h-16 w-16 items-center justify-center rounded-full text-white'
-                              style={{ background: getGradientBg() }}>
-                              <FeatureIcon className='h-8 w-8' />
+                      <ScrollReveal key={index} direction='up' delay={index * 150}>
+                        <Card className='transition-all duration-300 bg-white hover:-translate-y-1 hover:shadow-lg h-full'>
+                          <CardContent className='p-6 text-center'>
+                            <div className='mb-4 flex justify-center'>
+                              <div
+                                className='flex h-16 w-16 items-center justify-center rounded-full text-white'
+                                style={{ background: getGradientBg() }}>
+                                <FeatureIcon className='h-8 w-8' />
+                              </div>
                             </div>
-                          </div>
-                          <h4 className='mb-2 text-lg font-semibold'>{feature.title}</h4>
-                          <p className='text-sm text-muted-foreground'>
-                            {feature.description}
-                          </p>
-                        </CardContent>
-                      </Card>
+                            <h4 className='mb-2 text-lg font-semibold'>
+                              {feature.title}
+                            </h4>
+                            <p className='text-sm text-muted-foreground'>
+                              {feature.description}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </ScrollReveal>
                     );
                   })}
                 </div>
-                <div className='mt-12 rounded-lg' style={{ background: getGradientBg() }}>
-                  <div className='p-8 text-white'>
-                    <h4 className='mb-4 text-xl font-bold'>
-                      Siap mendiskusikan kebutuhan enterprise Anda?
-                    </h4>
-                    <p className='mb-6 text-blue-100'>
-                      Tim solusi enterprise kami akan bekerja dengan Anda untuk merancang
-                      solusi internet custom yang memenuhi kebutuhan spesifik Anda.
-                    </p>
-                    <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
-                      <Button
-                        asChild
-                        size='lg'
-                        className='bg-white text-blue-600 hover:bg-gray-100'>
-                        <Link href='/contact'>Jadwalkan Konsultasi</Link>
-                      </Button>
-                      <Button
-                        asChild
-                        size='lg'
-                        variant='outline'
-                        className='border-white text-white hover:bg-white hover:text-blue-600'>
-                        <Link href='tel:+6287847096138'>Hubungi Tim Sales</Link>
-                      </Button>
+                <ScrollReveal direction='up' delay={300}>
+                  <div
+                    className='mt-12 rounded-lg'
+                    style={{ background: getGradientBg() }}>
+                    <div className='p-8 text-white'>
+                      <h4 className='mb-4 text-xl font-bold'>
+                        Siap mendiskusikan kebutuhan enterprise Anda?
+                      </h4>
+                      <p className='mb-6 text-blue-100'>
+                        Tim solusi enterprise kami akan bekerja dengan Anda untuk
+                        merancang solusi internet custom yang memenuhi kebutuhan spesifik
+                        Anda.
+                      </p>
+                      <div className='flex flex-col gap-4 sm:flex-row sm:justify-center'>
+                        <Button
+                          asChild
+                          size='lg'
+                          className='bg-white text-blue-600 hover:bg-gray-100'>
+                          <Link href='/contact'>Jadwalkan Konsultasi</Link>
+                        </Button>
+                        <Button
+                          asChild
+                          size='lg'
+                          variant='outline'
+                          className='border-white text-white hover:bg-white hover:text-blue-600'>
+                          <Link href='tel:+6287847096138'>Hubungi Tim Sales</Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               </div>
             </TabsContent>
           </Tabs>
