@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
 import CallToAction from '@/components/call-to-action';
-import { FAQViaChat } from '@/components/faq';
+import { FAQViaChat } from '@/components/services/viachat/faq-viachat';
 
 export const metadata: Metadata = {
   title: 'ViaChat - Solusi API WhatsApp Business | JM NETWORK',
   description:
     'Transformasikan komunikasi pelanggan Anda dengan ViaChat API WhatsApp Business. Pesan real-time, chatbot AI, dukungan media lengkap.',
 };
-import FeaturesGrid, { type Feature } from '@/components/features-grid';
-import PricingSection from '@/components/pricing-section';
-import ProcessSteps, { ProcessStep } from '@/components/process-steps';
-import ServiceHero from '@/components/service-hero';
+import FeaturesGrid, { type Feature } from '@/components/services/_shared/features-grid';
+import PricingSection from '@/components/services/viachat/pricing-section';
+import ProcessSteps, { ProcessStep } from '@/components/services/viachat/process-steps';
+import ServiceHero from '@/components/services/_shared/service-hero';
 
 const viaChatFeatures: Feature[] = [
   {

@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
 import CallToAction from '@/components/call-to-action';
-import DevelopmentProcess from '@/components/development-process';
+import DevelopmentProcess from '@/components/services/it-solution/development-process';
 
 export const metadata: Metadata = {
   title: 'IT Solution - Solusi IT Komprehensif | JM NETWORK',
   description:
     'Layanan IT lengkap dari JM NETWORK: pengembangan aplikasi web/mobile, solusi jaringan, maintenance server, dan konsultasi teknologi.',
 };
-import { FAQITSolution } from '@/components/faq';
-import ITServices from '@/components/it-services';
-import ProjectPortfolio from '@/components/project-portfolio';
-import ServiceHero from '@/components/service-hero';
-import SupportTiers from '@/components/support-tiers';
-import TechnologyStack from '@/components/technology-stack';
+import { FAQITSolution } from '@/components/services/it-solution/faq-it-solution';
+import ITServices from '@/components/services/it-solution/it-services';
+import ProjectPortfolio from '@/components/services/it-solution/project-portfolio';
+import ServiceHero from '@/components/services/_shared/service-hero';
+import SupportTiers from '@/components/services/it-solution/support-tiers';
+import TechnologyStack from '@/components/services/it-solution/technology-stack';
 
 const colors = ['#38C7BA', '#2C69D3', '#2BD4A4'];
 

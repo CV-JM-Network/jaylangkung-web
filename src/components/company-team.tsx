@@ -48,7 +48,8 @@ export default function CompanyTeam() {
         <div className='text-center'>
           <h2 className='text-3xl font-bold lg:text-4xl'>Temui Tim Kami</h2>
           <p className='mt-4 text-lg text-muted-foreground'>
-            Setiap anggota tim kami memiliki keahlian unik yang berkontribusi pada kesuksesan bersama.
+            Setiap anggota tim kami memiliki keahlian unik yang berkontribusi pada
+            kesuksesan bersama.
           </p>
           <div className='mx-auto mt-4 h-1 w-16 bg-gradient-to-r from-blue-500 to-teal-600'></div>
         </div>

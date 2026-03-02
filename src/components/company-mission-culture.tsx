@@ -1,5 +1,16 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, Eye, Heart, Target, Lightbulb, Users, Trophy, Scale, GraduationCap, Globe } from 'lucide-react';
+import {
+  Check,
+  Eye,
+  Heart,
+  Target,
+  Lightbulb,
+  Users,
+  Trophy,
+  Scale,
+  GraduationCap,
+  Globe,
+} from 'lucide-react';
 
 const compValues = [
   'Inovasi di setiap langkah',

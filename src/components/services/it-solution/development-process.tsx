@@ -8,6 +8,7 @@ import {
   Rocket,
   TestTube,
 } from 'lucide-react';
+import ScrollReveal from '@/components/scroll-reveal';
 
 interface DevProcessProps {
   colors: string[];
@@ -107,56 +108,62 @@ export default function DevelopmentProcess({ colors }: DevProcessProps) {
   return (
     <section className='bg-gray-50 py-20'>
       <div className='container mx-auto px-4'>
-        <div className='text-center'>
-          <h2 className='text-3xl font-bold lg:text-4xl'>Proses Development Kami</h2>
-          <p className='mt-4 text-lg text-muted-foreground'>
-            Metodologi proven yang memastikan proyek selesai tepat waktu dan sesuai
-            ekspektasi
-          </p>
-          <div
-            className='mx-auto mt-4 h-1 w-16'
-            style={{ background: getGradientBg() }}></div>
-        </div>
+        <ScrollReveal direction='up'>
+          <div className='text-center'>
+            <h2 className='text-3xl font-bold lg:text-4xl'>Proses Development Kami</h2>
+            <p className='mt-4 text-lg text-muted-foreground'>
+              Metodologi proven yang memastikan proyek selesai tepat waktu dan sesuai
+              ekspektasi
+            </p>
+            <div
+              className='mx-auto mt-4 h-1 w-16'
+              style={{ background: getGradientBg() }}></div>
+          </div>
+        </ScrollReveal>
 
         <div className='mt-16 grid gap-8 lg:grid-cols-2 xl:grid-cols-3'>
           {processSteps.map((step, index) => {
             const StepIcon = step.icon;
             return (
-              <Card
-                key={index}
-                className='group relative transition-all duration-300 hover:-translate-y-2 hover:shadow-xl'>
-                <div className='absolute -top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-sky-500 text-sm font-bold text-white'>
-                  {step.step}
-                </div>
-                <CardContent className='p-6 pt-8'>
-                  <div
-                    className='mb-4 flex h-12 w-12 items-center justify-center rounded-lg text-white'
-                    style={{ background: getGradientBg() }}>
-                    <StepIcon className='h-6 w-6' />
+              <ScrollReveal key={index} direction='up' delay={index * 100}>
+                <Card className='group relative h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl'>
+                  <div className='absolute -top-4 left-4 flex h-8 w-8 items-center justify-center rounded-full bg-sky-500 text-sm font-bold text-white'>
+                    {step.step}
                   </div>
+                  <CardContent className='p-6 pt-8'>
+                    <div
+                      className='mb-4 flex h-12 w-12 items-center justify-center rounded-lg text-white'
+                      style={{ background: getGradientBg() }}>
+                      <StepIcon className='h-6 w-6' />
+                    </div>
 
-                  <h3 className='mb-2 text-lg font-semibold'>{step.title}</h3>
-                  <p className='mb-4 text-sm text-muted-foreground'>{step.description}</p>
+                    <h3 className='mb-2 text-lg font-semibold'>{step.title}</h3>
+                    <p className='mb-4 text-sm text-muted-foreground'>
+                      {step.description}
+                    </p>
 
-                  <div className='mb-4 space-y-2'>
-                    {step.details.map((detail, detailIndex) => (
-                      <div key={detailIndex} className='flex items-center gap-2 text-xs'>
-                        <div className='h-1.5 w-1.5 rounded-full bg-blue-500' />
-                        <span className='text-muted-foreground'>{detail}</span>
-                      </div>
-                    ))}
-                  </div>
+                    <div className='mb-4 space-y-2'>
+                      {step.details.map((detail, detailIndex) => (
+                        <div
+                          key={detailIndex}
+                          className='flex items-center gap-2 text-xs'>
+                          <div className='h-1.5 w-1.5 rounded-full bg-blue-500' />
+                          <span className='text-muted-foreground'>{detail}</span>
+                        </div>
+                      ))}
+                    </div>
 
-                  <div className='flex items-center justify-between'>
-                    <Badge variant='outline' className='text-xs'>
-                      {step.timeframe}
-                    </Badge>
-                    <Badge className='bg-green-100 text-green-800 text-xs'>
-                      {step.deliverable}
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className='flex items-center justify-between'>
+                      <Badge variant='outline' className='text-xs'>
+                        {step.timeframe}
+                      </Badge>
+                      <Badge className='bg-green-100 text-green-800 text-xs'>
+                        {step.deliverable}
+                      </Badge>
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             );
           })}
         </div>

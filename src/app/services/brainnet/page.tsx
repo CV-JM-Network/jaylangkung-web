@@ -1,17 +1,17 @@
 import type { Metadata } from 'next';
 import CallToAction from '@/components/call-to-action';
-import { FAQBrainnet } from '@/components/faq';
+import { FAQBrainnet } from '@/components/services/brainnet/faq-brainnet';
 
 export const metadata: Metadata = {
   title: 'Brainnet - Layanan Internet Fiber-Optic Premium | JM NETWORK',
   description:
     'Rasakan internet fiber-optic super cepat hingga 1 Gbps dengan Brainnet. Paket rumah dan enterprise, 99.9% uptime SLA, dukungan 24/7.',
 };
-import FeaturesGrid from '@/components/features-grid';
-import InstallationProcess from '@/components/installation-process';
-import InternetPlans from '@/components/internet-plans';
-import ServiceHero from '@/components/service-hero';
-import SpeedComparison from '@/components/speed-comparison';
+import FeaturesGrid from '@/components/services/_shared/features-grid';
+import InstallationProcess from '@/components/services/brainnet/installation-process';
+import InternetPlans from '@/components/services/brainnet/internet-plans';
+import ServiceHero from '@/components/services/_shared/service-hero';
+import SpeedComparison from '@/components/services/brainnet/speed-comparison';
 
 // Color palette for Brainnet
 const colors = ['#008FFF', '#FF7B13', '#008FFF'];
