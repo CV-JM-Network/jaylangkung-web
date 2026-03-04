@@ -8,6 +8,14 @@ export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const slug = searchParams.get('slug');
 
+    // Input validation for slug parameter
+    if (slug && !/^[a-z0-9-]+$/.test(slug)) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid slug format. Use lowercase letters, numbers, and hyphens only.' },
+        { status: 400 }
+      );
+    }
+
     if (slug) {
       // Fetch single plan by slug
       const plan = await prisma.residentialPlan.findUnique({
