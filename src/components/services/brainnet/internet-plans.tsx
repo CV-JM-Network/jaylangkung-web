@@ -15,142 +15,20 @@ import {
   Upload,
 } from 'lucide-react';
 import Link from 'next/link';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ScrollReveal from '@/components/scroll-reveal';
+import { ResidentialPlan } from '@/types/plan';
 
 interface InternetPlansProps {
   colors: string[];
 }
 
-const residentialPlans = [
-  {
-    name: 'Home 40',
-    price: '118.200',
-    originalPrice: '159.000',
-    description: 'Internet stabil untuk kebutuhan dasar',
-    downloadSpeed: '40 Mbps',
-    uploadSpeed: '40 Mbps',
-    features: [
-      'Data unlimited',
-      'Instalasi gratis',
-      'Router WiFi included',
-      'Dukungan 24/7',
-    ],
-    popular: false,
-    savings: 'Hemat Rp 40.800',
-  },
-  {
-    name: 'Home 60',
-    price: '175.000',
-    originalPrice: '239.000',
-    description: 'Cocok untuk streaming dan browsing',
-    downloadSpeed: '60 Mbps',
-    uploadSpeed: '60 Mbps',
-    features: [
-      'Data unlimited',
-      'Instalasi gratis',
-      'Router WiFi included',
-      'Dukungan 24/7',
-    ],
-    popular: true,
-    savings: 'Hemat Rp 64.000',
-  },
-  {
-    name: 'Home 100',
-    price: '250.000',
-    originalPrice: '349.000',
-    description: 'Ideal untuk keluarga dan remote work',
-    downloadSpeed: '100 Mbps',
-    uploadSpeed: '100 Mbps',
-    features: [
-      'Data unlimited',
-      'Instalasi gratis',
-      'Router WiFi included',
-      'Dukungan 24/7',
-    ],
-    popular: false,
-    savings: 'Hemat Rp 99.000',
-  },
-  {
-    name: 'Home 150',
-    price: '350.000',
-    originalPrice: '469.000',
-    description: 'Kecepatan tinggi untuk banyak perangkat',
-    downloadSpeed: '150 Mbps',
-    uploadSpeed: '150 Mbps',
-    features: [
-      'Data unlimited',
-      'Instalasi gratis',
-      'Router WiFi included',
-      'Dukungan 24/7',
-    ],
-    popular: false,
-    savings: 'Hemat Rp 119.000',
-  },
-  {
-    name: 'Home 200',
-    price: '500.000',
-    originalPrice: '689.000',
-    description: 'Streaming dan gaming tanpa hambatan',
-    downloadSpeed: '200 Mbps',
-    uploadSpeed: '200 Mbps',
-    features: [
-      'Data unlimited',
-      'Instalasi gratis',
-      'Router WiFi included',
-      'Dukungan 24/7',
-    ],
-    popular: false,
-    savings: 'Hemat Rp 189.000',
-  },
-  {
-    name: 'Home 300',
-    price: '1.300.000',
-    originalPrice: '1.790.000',
-    description: 'Untuk kebutuhan internet super cepat',
-    downloadSpeed: '300 Mbps',
-    uploadSpeed: '300 Mbps',
-    features: [
-      'Data unlimited',
-      'Instalasi gratis',
-      'Router WiFi included',
-      'Dukungan 24/7',
-    ],
-    popular: false,
-    savings: 'Hemat Rp 490.000',
-  },
-  {
-    name: 'Home 500',
-    price: '1.200.000',
-    originalPrice: '1.699.000',
-    description: 'Koneksi ultra cepat untuk rumah modern',
-    downloadSpeed: '500 Mbps',
-    uploadSpeed: '500 Mbps',
-    features: [
-      'Data unlimited',
-      'Instalasi gratis',
-      'Router WiFi included',
-      'Dukungan 24/7',
-    ],
-    popular: false,
-    savings: 'Hemat Rp 499.000',
-  },
-  {
-    name: 'Home 1000',
-    price: '1.375.000',
-    originalPrice: '1.899.000',
-    description: 'Kecepatan maksimal untuk power user',
-    downloadSpeed: '1 Gbps',
-    uploadSpeed: '1 Gbps',
-    features: [
-      'Data unlimited',
-      'Instalasi gratis',
-      'Router WiFi included',
-      'Dukungan 24/7',
-    ],
-    popular: false,
-    savings: 'Hemat Rp 524.000',
-  },
+// Shared features for all residential plans (hardcoded as discussed)
+const SHARED_FEATURES = [
+  'Data unlimited',
+  'Instalasi gratis',
+  'Router WiFi included',
+  'Dukungan 24/7',
 ];
 
 const enterpriseFeatures = [
@@ -176,7 +54,31 @@ const enterpriseFeatures = [
 
 export default function InternetPlans({ colors }: InternetPlansProps) {
   const [activeTab, setActiveTab] = useState('residential');
+  const [plans, setPlans] = useState<ResidentialPlan[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    async function fetchPlans() {
+      try {
+        const response = await fetch('/api/plans/residential');
+        const result = await response.json();
+
+        if (result.success) {
+          setPlans(result.data);
+        } else {
+          setError(result.error || 'Failed to fetch plans');
+        }
+      } catch (err) {
+        setError('Failed to connect to server');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchPlans();
+  }, []);
 
   // Helper functions for style consistency
   const getGradientBg = () => `linear-gradient(135deg, ${colors.join(', ')})`;
@@ -187,6 +89,19 @@ export default function InternetPlans({ colors }: InternetPlansProps) {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: offset, behavior: 'smooth' });
     }
+  };
+
+  // Calculate savings from currentPrice and originalPrice
+  const calculateSavings = (currentPrice: number, originalPrice: number | null): string | null => {
+    if (!originalPrice) return null;
+    const savings = originalPrice - currentPrice;
+    if (savings <= 0) return null;
+    return `Hemat Rp ${savings.toLocaleString('id-ID')}`;
+  };
+
+  // Format price for display (in thousands for display like "118.200")
+  const formatPrice = (price: number): string => {
+    return price.toLocaleString('id-ID');
   };
 
   return (
@@ -259,133 +174,142 @@ export default function InternetPlans({ colors }: InternetPlansProps) {
             <TabsContent
               value='residential'
               className='mt-8 transition-all duration-500 ease-in-out animate-rise-up'>
-              <div className='relative flex items-center'>
-                <button
-                  type='button'
-                  aria-label='Scroll left'
-                  className='absolute -left-6 top-1/2 z-10 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-200 transition hidden md:block'
-                  style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
-                  onClick={() => scrollBy(-320)}>
-                  <ChevronLeft className='h-6 w-6 text-gray-600' />
-                </button>
-                <div
-                  ref={scrollRef}
-                  className='overflow-x-auto pb-8 pt-8 min-h-[480px] scrollbar-hide w-full'
-                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                  <style>{`.scrollbar-hide::-webkit-scrollbar{display:none}`}</style>
-                  <div className='flex gap-8 min-w-max snap-x snap-mandatory'>
-                    {residentialPlans.map((plan, index) => {
-                      const {
-                        name,
-                        price,
-                        originalPrice,
-                        description,
-                        downloadSpeed,
-                        uploadSpeed,
-                        features,
-                        popular,
-                        savings,
-                      } = plan;
-                      return (
-                        <div key={index} className='snap-center flex-shrink-0 w-80'>
-                          <Card
-                            className={`relative transition-all duration-300 bg-white hover:-translate-y-2 hover:shadow-xl ${
-                              popular ? 'shadow-lg' : ''
-                            }`}
-                            style={popular ? { border: getHighlightBorder() } : {}}>
-                            <CardHeader className='text-center'>
-                              <CardTitle className='text-2xl'>{name}</CardTitle>
-                              <p className='text-muted-foreground'>{description}</p>
-                              <div className='mt-4 space-y-2'>
-                                <div className='flex items-center justify-center gap-2'>
-                                  <span className='text-sm text-muted-foreground line-through'>
-                                    Rp {originalPrice}rb
-                                  </span>
-                                </div>
-                                <div>
-                                  <span className='text-sm text-muted-foreground'>
-                                    Rp
-                                  </span>
-                                  <span className='text-4xl font-bold text-blue-600'>
-                                    {price}
-                                  </span>
-                                  <span className='text-muted-foreground'>rb/bulan</span>
-                                </div>
-                                {(popular || savings) && (
-                                  <div className='flex items-center justify-center gap-2 mt-2'>
-                                    {popular && (
-                                      <Badge className='text-white' style={getBadgeBg()}>
-                                        Paling Populer
-                                      </Badge>
-                                    )}
-                                    {savings && (
-                                      <Badge
-                                        variant='secondary'
-                                        className='bg-green-500 text-white'>
-                                        {savings}
-                                      </Badge>
-                                    )}
-                                  </div>
-                                )}
-                              </div>
-                            </CardHeader>
-                            <CardContent className='space-y-6'>
-                              <div className='space-y-3'>
-                                <div className='flex items-center justify-between rounded-lg bg-blue-50 p-3'>
-                                  <div className='flex items-center gap-2'>
-                                    <Download className='h-4 w-4 text-blue-600' />
-                                    <span className='text-sm font-medium'>Download</span>
-                                  </div>
-                                  <span className='font-bold text-blue-600'>
-                                    {downloadSpeed}
-                                  </span>
-                                </div>
-                                <div className='flex items-center justify-between rounded-lg bg-green-50 p-3'>
-                                  <div className='flex items-center gap-2'>
-                                    <Upload className='h-4 w-4 text-green-600' />
-                                    <span className='text-sm font-medium'>Upload</span>
-                                  </div>
-                                  <span className='font-bold text-green-600'>
-                                    {uploadSpeed}
-                                  </span>
-                                </div>
-                              </div>
-                              <ul className='space-y-3'>
-                                {features.map((feature, featureIndex) => (
-                                  <li
-                                    key={featureIndex}
-                                    className='flex items-center gap-2'>
-                                    <Check className='h-4 w-4 text-green-500' />
-                                    <span className='text-sm'>{feature}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                              <Button
-                                asChild
-                                className={`w-full ${
-                                  popular
-                                    ? 'bg-blue-500 hover:bg-blue-600 text-white'
-                                    : ''
-                                }`}
-                                variant={popular ? 'default' : 'outline'}>
-                                <Link href='/contact'>Pesan Sekarang</Link>
-                              </Button>
-                            </CardContent>
-                          </Card>
-                        </div>
-                      );
-                    })}
+              {loading ? (
+                <div className='flex items-center justify-center py-20'>
+                  <div className='text-center'>
+                    <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto'></div>
+                    <p className='mt-4 text-muted-foreground'>Loading plans...</p>
                   </div>
                 </div>
-                <button
-                  type='button'
-                  aria-label='Scroll right'
-                  className='absolute -right-6 top-1/2 z-10 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-200 transition hidden md:block'
-                  style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
-                  onClick={() => scrollBy(320)}>
-                  <ChevronRight className='h-6 w-6 text-gray-600' />
-                </button>
-              </div>
+              ) : error ? (
+                <div className='flex items-center justify-center py-20'>
+                  <div className='text-center text-red-600'>
+                    <p className='text-lg font-semibold'>Failed to load plans</p>
+                    <p className='text-sm mt-2'>{error}</p>
+                  </div>
+                </div>
+              ) : (
+                <div className='relative flex items-center'>
+                  <button
+                    type='button'
+                    aria-label='Scroll left'
+                    className='absolute -left-6 top-1/2 z-10 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-200 transition hidden md:block'
+                    style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
+                    onClick={() => scrollBy(-320)}>
+                    <ChevronLeft className='h-6 w-6 text-gray-600' />
+                  </button>
+                  <div
+                    ref={scrollRef}
+                    className='overflow-x-auto pb-8 pt-8 min-h-[480px] scrollbar-hide w-full'
+                    style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                    <style>{`.scrollbar-hide::-webkit-scrollbar{display:none}`}</style>
+                    <div className='flex gap-8 min-w-max snap-x snap-mandatory'>
+                      {plans.map((plan) => {
+                        const savings = calculateSavings(
+                          Number(plan.currentPrice),
+                          plan.originalPrice ? Number(plan.originalPrice) : null
+                        );
+                        return (
+                          <div key={plan.id} className='snap-center flex-shrink-0 w-80'>
+                            <Card
+                              className={`relative transition-all duration-300 bg-white hover:-translate-y-2 hover:shadow-xl ${
+                                plan.isPopular ? 'shadow-lg' : ''
+                              }`}
+                              style={plan.isPopular ? { border: getHighlightBorder() } : {}}>
+                              <CardHeader className='text-center'>
+                                <CardTitle className='text-2xl'>{plan.name}</CardTitle>
+                                <p className='text-muted-foreground'>{plan.description}</p>
+                                <div className='mt-4 space-y-2'>
+                                  <div className='flex items-center justify-center gap-2'>
+                                    {plan.originalPrice && (
+                                      <span className='text-sm text-muted-foreground line-through'>
+                                        Rp {formatPrice(Number(plan.originalPrice))}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div>
+                                    <span className='text-sm text-muted-foreground'>
+                                      Rp
+                                    </span>
+                                    <span className='text-4xl font-bold text-blue-600'>
+                                      {formatPrice(Number(plan.currentPrice))}
+                                    </span>
+                                    <span className='text-muted-foreground'>/bulan</span>
+                                  </div>
+                                  {(plan.isPopular || savings) && (
+                                    <div className='flex items-center justify-center gap-2 mt-2'>
+                                      {plan.isPopular && (
+                                        <Badge className='text-white' style={getBadgeBg()}>
+                                          Paling Populer
+                                        </Badge>
+                                      )}
+                                      {savings && (
+                                        <Badge
+                                          variant='secondary'
+                                          className='bg-green-500 text-white'>
+                                          {savings}
+                                        </Badge>
+                                      )}
+                                    </div>
+                                  )}
+                                </div>
+                              </CardHeader>
+                              <CardContent className='space-y-6'>
+                                <div className='space-y-3'>
+                                  <div className='flex items-center justify-between rounded-lg bg-blue-50 p-3'>
+                                    <div className='flex items-center gap-2'>
+                                      <Download className='h-4 w-4 text-blue-600' />
+                                      <span className='text-sm font-medium'>Download</span>
+                                    </div>
+                                    <span className='font-bold text-blue-600'>
+                                      {plan.downloadSpeedMbps} Mbps
+                                    </span>
+                                  </div>
+                                  <div className='flex items-center justify-between rounded-lg bg-green-50 p-3'>
+                                    <div className='flex items-center gap-2'>
+                                      <Upload className='h-4 w-4 text-green-600' />
+                                      <span className='text-sm font-medium'>Upload</span>
+                                    </div>
+                                    <span className='font-bold text-green-600'>
+                                      {plan.uploadSpeedMbps} Mbps
+                                    </span>
+                                  </div>
+                                </div>
+                                <ul className='space-y-3'>
+                                  {SHARED_FEATURES.map((feature, featureIndex) => (
+                                    <li key={featureIndex} className='flex items-center gap-2'>
+                                      <Check className='h-4 w-4 text-green-500' />
+                                      <span className='text-sm'>{feature}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                                <Button
+                                  asChild
+                                  className={`w-full ${
+                                    plan.isPopular
+                                      ? 'bg-blue-500 hover:bg-blue-600 text-white'
+                                      : ''
+                                  }`}
+                                  variant={plan.isPopular ? 'default' : 'outline'}>
+                                  <Link href='/contact'>Pesan Sekarang</Link>
+                                </Button>
+                              </CardContent>
+                            </Card>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  <button
+                    type='button'
+                    aria-label='Scroll right'
+                    className='absolute -right-6 top-1/2 z-10 -translate-y-1/2 bg-white shadow-lg rounded-full p-2 hover:bg-gray-200 transition hidden md:block'
+                    style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
+                    onClick={() => scrollBy(320)}>
+                    <ChevronRight className='h-6 w-6 text-gray-600' />
+                  </button>
+                </div>
+              )}
               <p className='text-center text-sm text-muted-foreground mt-2 md:hidden'>
                 Geser untuk melihat paket lainnya →
               </p>
